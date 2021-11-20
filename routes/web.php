@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('books', [
-        'books' => Book::all()
+        'books' => Book::with('category')->get()
     ]);
 });
 
