@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Books');
+// <<<<<<< HEAD
+    return view('Edit   Book');
+// =======
+//     return view('dashboard');
+// });
+// Route::get('/pages/tables', function () {
+//     return view('tables');
+// >>>>>>> 33e792849e7590bb49617f9b3f146de258169085
+// });
+// Route::get('/pages/dashboard', function () {
+//     return view('dashboard');
 });
