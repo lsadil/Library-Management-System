@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 // <<<<<<< HEAD
-    return view('Edit   Book');
+    return view('EditBook');
 // =======
 //     return view('dashboard');
 // });

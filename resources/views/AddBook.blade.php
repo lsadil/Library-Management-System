@@ -406,8 +406,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label for="langage" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Langage</label>
-                                    <input class="form-control" list="datalistOptions" id="langage" placeholder="Select Langage..." required>
-                                    <datalist id="datalistOptions">
+                                    <input class="form-control" list="datalistOptions2" id="langage" placeholder="Select Langage..." required>
+                                    <datalist id="datalistOptions2">
                                         <option value="French">
                                         <option value="English">
                                         <option value="Arabic">

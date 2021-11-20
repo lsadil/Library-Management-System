@@ -429,8 +429,8 @@
                                 </div>
                                 <div class="col-lg-6 col-md-12 mb-3">
                                 <label for="Category" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Category</label>
-                                    <input class="form-control" list="datalistOptions" id="Category" placeholder="Polar">
-                                    <datalist id="datalistOptions">
+                                    <input class="form-control" list="datalistOptions2" id="Category" placeholder="Polar">
+                                    <datalist id="datalistOptions2">
                                         <option value="Polar">
                                         <option value="Documentaire">
                                         <option value="Etude">
