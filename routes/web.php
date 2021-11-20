@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('dashboard');
+});
+Route::get('/pages/tables', function () {
     return view('tables');
+});
+Route::get('/pages/dashboard', function () {
+    return view('dashboard');
 });
