@@ -21,7 +21,7 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->string('editor');
             $table->text('summary');
-            $table->bigInteger('ISBN');
+            $table->string('ISBN');
             $table->integer('number_of_copies');
             $table->string('language');
             $table->integer('year');
