@@ -24925,5 +24925,25 @@ pre[class*="language-"] {
     overflow: auto !important;
   }
 }
+.styled {
+    border: 2px;
+    line-height: 2.5;
+    font-size: 1rem;
+    text-align: center;
+    position: right;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: #8392AB;
 
+}
+
+.styled:hover {
+    background-color:#F56565;
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
 /*# sourceMappingURL=dashboard-free.css.map */
