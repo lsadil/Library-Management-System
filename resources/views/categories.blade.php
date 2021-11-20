@@ -100,7 +100,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  active" href="../resources/views/categories">
+                <a class="nav-link  active" href="Categories">
                     <!-- check ça -->
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -459,7 +459,8 @@
                                             <p class="text-xs font-weight-bold mb-0">{{$category->id}}</p>
                                         </td>
                                         <td class="align-middle">
-                                            <a href="editcategory/{{$category->slug}}" class="text-secondary font-weight-bold text-xs"
+                                            <a href="editCategory/{{$category->slug}}"
+                                               class="text-secondary font-weight-bold text-xs"
                                                data-toggle="tooltip" data-original-title="Edit user">
                                                 Edit
                                             </a>

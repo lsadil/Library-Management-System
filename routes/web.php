@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,3 +37,14 @@ Route::get('AddBook', function () {
     return view('addBook');
 });
 
+Route::get('editCategory/{category:slug}', function (Category $category) {
+    return view('books', [
+        'books' => $category
+    ]);
+});
+
+Route::get('Categories', function () {
+    return view('categories', [
+        'categories' => Category::all()
+    ]);
+});
