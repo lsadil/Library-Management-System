@@ -423,46 +423,55 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-body px-0 pt-0 pb-2">
-                            <form class="row g-3">
+                            <form class="row g-3" action="AddBook/add" method="post">
+                                @csrf
                                 <div class="col-md-6">
-                                    <label for="titleOfBook" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    <label for="titleOfBook"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Title Of Book
                                     </label>
-                                    <input type="text" class="form-control" id="titleOfBook" required />
+                                    <input type="text" name="title" class="form-control" id="titleOfBook"/>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="nameOfAuthor" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    <label for="nameOfAuthor"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Name Of Author
                                     </label>
-                                    <input type="text" class="form-control" id="nameOfAuthor" required />
+                                    <input type="text" name="author" class="form-control" id="nameOfAuthor"/>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="ID" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    <label for="ID"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         ID
                                     </label>
-                                    <input type="text" class="form-control " id="ID" required />
+                                    <input type="text" class="form-control " id="ID"/>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="ISBN" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    <label for="ISBN"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         ISBN
                                     </label>
-                                    <input type="number" class="form-control " id="ISBN" required />
+                                    <input type="number" class="form-control " id="ISBN"/>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="numberOfIssues" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    <label for="numberOfIssues"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Number Of Issues
                                     </label>
-                                    <input type="number" class="form-control" id="numberOfIssues" required />
+                                    <input type="number" class="form-control" id="numberOfIssues"/>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="nameOfEditor" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    <label for="nameOfEditor"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Name Of Editor
                                     </label>
-                                    <input type="text" class="form-control" id="nameOfEditor" required />
+                                    <input type="text" name="editor" class="form-control" id="nameOfEditor"/>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="langage" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Langage</label>
-                                    <input class="form-control" list="datalistOptions2" id="langage" placeholder="Select Langage..." required>
+                                    <label for="langage"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Langage</label>
+                                    <input class="form-control" list="datalistOptions2" id="langage"
+                                           placeholder="Select Langage...">
                                     <datalist id="datalistOptions2">
                                         <option value="French">
                                         <option value="English">
@@ -472,20 +481,25 @@
                                     </datalist>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="date" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    <label for="date"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Date
                                     </label>
-                                    <input type="date" class="form-control" id="date" required />
+                                    <input type="date" class="form-control" id="date"/>
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="descriptionOfBook" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    <label for="descriptionOfBook"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Description Of Book
                                     </label>
-                                    <textarea class="form-control" id="descriptionOfBook" rows="10"></textarea>
+                                    <textarea class="form-control" name="summary" id="descriptionOfBook"
+                                              rows="10"></textarea>
                                 </div>
                                 <div class="col-lg-6 col-md-12 mb-2">
-                                <label for="Category" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Category</label>
-                                    <input class="form-control" list="datalistOptions" id="Category" placeholder="Select Category..." required>
+                                    <label for="Category"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Category</label>
+                                    <input class="form-control" list="datalistOptions" id="Category"
+                                           placeholder="Select Category...">
                                     <datalist id="datalistOptions">
                                         <option value="Polar">
                                         <option value="Documentaire">
@@ -497,7 +511,7 @@
                                     <label for="image" class="form-label">
                                         Book Picture
                                     </label>
-                                    <input type="file" class="form-control" id="image" required />
+                                    <input type="file" class="form-control" id="image"/>
                                 </div>
                                 <div class="col-md-12">
                                     <button type="submit" class="btn" style="background-color: green; color: #fff">

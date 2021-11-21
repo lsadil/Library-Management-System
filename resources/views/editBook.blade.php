@@ -422,21 +422,22 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-body px-0 pt-0 pb-2">
-                        <form class="row g-3">
+                        <form class="row g-3" action="{{$book->slug}}/update" method="POST">
+                            @csrf
                             <div class="col-md-6">
                                 <label for="titleOfBook"
                                        class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                     Title Of Book
                                 </label>
-                                <input type="text" class="form-control" id="titleOfBook"
-                                       placeholder="{{$book->title}}"/>
+                                <input type="text" name="title" class="form-control" id="titleOfBook"
+                                       placeholder="{{$book->title}}" "/>
                             </div>
                             <div class="col-md-6">
                                 <label for="nameOfAuthor"
                                        class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                     Name Of Author
                                 </label>
-                                <input type="text" class="form-control" id="nameOfAuthor"
+                                <input type="text" name="author" class="form-control" id="nameOfAuthor"
                                        placeholder="{{$book->author}}"/>
                             </div>
                             <div class="col-md-4">
@@ -451,14 +452,15 @@
                                        class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                     ISBN
                                 </label>
-                                <input type="number" class="form-control " id="ISBN" placeholder="{{$book->ISBN}}"/>
+                                <input type="number" name="ISBN" class="form-control " id="ISBN"
+                                       placeholder="{{$book->ISBN}}"/>
                             </div>
                             <div class="col-md-4">
                                 <label for="numberOfIssues"
                                        class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                     Number Of Issues
                                 </label>
-                                <input type="number" class="form-control" id="numberOfIssues"
+                                <input type="number" name="numberOfCopies" class="form-control" id="numberOfIssues"
                                        placeholder="{{$book->number_of_copies}}"/>
                             </div>
                             <div class="col-md-4">
@@ -466,7 +468,7 @@
                                        class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                     Name Of Editor
                                 </label>
-                                <input type="text" class="form-control" id="nameOfEditor"
+                                <input type="text" name="editor" class="form-control" id="nameOfEditor"
                                        placeholder="{{$book->editor}}"/>
                             </div>
                             <div class="col-md-4">
@@ -494,7 +496,7 @@
                                        class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                     Description Of Book
                                 </label>
-                                <textarea class="form-control" id="descriptionOfBook" rows="10"
+                                <textarea class="form-control" name="summary" id="descriptionOfBook" rows="10"
                                           placeholder="{{$book->summary}}"></textarea>
                             </div>
                             <div class="col-lg-6 col-md-12 mb-3">
@@ -517,19 +519,27 @@
                             </div>
                             <div class="col-md-12">
                                 <button type="submit" class="btn" style="background-color: green; color: #fff">
-                                    Submit
-                                </button>
-                                <button type="button" class="btn btn-danger" style="color: #fff">
-                                    Delete Book
+                                    Save
                                 </button>
                             </div>
                         </form>
+                        <div class="col-md-12">
 
+                            <form class="row g-3" action="{{$book->slug}}/delete" method="POST">
+                                <div class="col-md-12">
+                                    @csrf
+                                    <button type="" class="btn btn-danger" style="color: #fff">
+                                        Delete Book
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="col-md-12">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 </main>
 <div class="fixed-plugin">
     <div class="card shadow-lg ">

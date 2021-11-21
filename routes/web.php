@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -48,3 +49,7 @@ Route::get('Categories', function () {
         'categories' => Category::all()
     ]);
 });
+
+Route::post('EditBook/{book:slug}/update', [BookController::class, 'update']);
+Route::post('EditBook/{book:slug}/delete', [BookController::class, 'destroy']);
+Route::post('AddBook/add', [BookController::class, 'create']);
