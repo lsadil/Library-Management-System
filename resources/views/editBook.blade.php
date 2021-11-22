@@ -430,7 +430,7 @@
                                     Title Of Book
                                 </label>
                                 <input type="text" name="title" class="form-control" id="titleOfBook"
-                                       placeholder="{{$book->title}}" "/>
+                                       placeholder="{{$book->title}}" />
                             </div>
                             <div class="col-md-6">
                                 <label for="nameOfAuthor"

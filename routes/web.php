@@ -16,40 +16,44 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('books', [
+//         'books' => Book::with('category')->get()
+//     ]);
+// });
+
+// Route::get('EditBook/{book:slug}', function (Book $book) {
+//     return view('editBook', [
+//         'book' => $book
+//     ]);
+// });
+
+// Route::get('Books', function () {
+//     return view('books', [
+//         'books' => Book::all()
+//     ]);
+// });
+
+// Route::get('AddBook', function () {
+//     return view('addBook');
+// });
+
+// Route::get('editCategory/{category:slug}', function (Category $category) {
+//     return view('books', [
+//         'books' => $category
+//     ]);
+// });
+
+// Route::get('Categories', function () {
+//     return view('categories', [
+//         'categories' => Category::all()
+//     ]);
+// });
+
+// Route::post('EditBook/{book:slug}/update', [BookController::class, 'update']);
+// Route::post('EditBook/{book:slug}/delete', [BookController::class, 'destroy']);
+// Route::post('AddBook/add', [BookController::class, 'create']);
+
 Route::get('/', function () {
-    return view('books', [
-        'books' => Book::with('category')->get()
-    ]);
+    return view('addsubscriber');
 });
-
-Route::get('EditBook/{book:slug}', function (Book $book) {
-    return view('editBook', [
-        'book' => $book
-    ]);
-});
-
-Route::get('Books', function () {
-    return view('books', [
-        'books' => Book::all()
-    ]);
-});
-
-Route::get('AddBook', function () {
-    return view('addBook');
-});
-
-Route::get('editCategory/{category:slug}', function (Category $category) {
-    return view('books', [
-        'books' => $category
-    ]);
-});
-
-Route::get('Categories', function () {
-    return view('categories', [
-        'categories' => Category::all()
-    ]);
-});
-
-Route::post('EditBook/{book:slug}/update', [BookController::class, 'update']);
-Route::post('EditBook/{book:slug}/delete', [BookController::class, 'destroy']);
-Route::post('AddBook/add', [BookController::class, 'create']);

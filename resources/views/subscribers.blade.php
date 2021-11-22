@@ -69,7 +69,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  active" href="Books">
+                    <a class="nav-link" href="Books">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                 <title>Book</title>
@@ -132,7 +132,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  " href="../pages/rtl.html">
+                    <a class="nav-link  active" href="../pages/rtl.html">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                 <title>Subscribers</title>
@@ -253,9 +253,9 @@
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Library</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Books</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Subscribers</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Books</h6>
+                    <h6 class="font-weight-bolder mb-0">Subscribers</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -367,56 +367,55 @@
             <div class="row">
                 <div class="col-3">
                     <div class="card mb-4">
-                        <input class="favorite styled" onclick="window.location.href='AddBook'" type="button" value="Add Book">
+                        <input class="favorite styled" onclick="window.location.href='addsubscriber'" type="button" value="Add Subscriber">
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h6>Books</h6>
+                            <h6>Subscribers</h6>
                         </div>
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
                                 <table class="table align-items-center mb-0">
                                     <thead>
                                         <tr>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name
-                                                Of Books
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                First name
                                             </th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                Last name
+                                            </th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Birthday
+                                            </th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 ID
-                                            </th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Category
-                                            </th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Number Of Issues
                                             </th>
                                             <th class="text-secondary opacity-7"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($books as $book)
+                                        @foreach ($subscribers as $subscriber)
                                         <tr>
                                             <td>
                                                 <div class="d-flex px-2 py-1">
                                                     <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">{{$book->title}}</h6>
-                                                        <p class="text-xs text-secondary mb-0">{{$book->author}}</p>
+                                                        <h6 class="mb-0 text-sm">{{$subscriber->first_name}}</h6>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td>
-                                                <p class="text-xs font-weight-bold mb-0">{{$book->id}}</p>
+                                                <p class="text-xs font-weight-bold mb-0">{{$subscriber->last_name}}</p>
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <p class="text-xs font-weight-bold mb-0">{{$book->category->name}}</p>
+                                                <p class="text-xs font-weight-bold mb-0">{{$subscriber->birthday}}</p>
                                             </td>
-                                            <td class="align-middle text-center">
-                                                <span class="text-secondary text-xs font-weight-bold">{{$book->number_of_copies}}</span>
+                                            <td class="align-middle text-center text-sm">
+                                                <p class="text-xs font-weight-bold mb-0">{{$subscriber->id}}</p>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="EditBook/{{$book->slug}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="editsubscriber/{{$subscriber->slug}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                                     Edit
                                                 </a>
                                             </td>
