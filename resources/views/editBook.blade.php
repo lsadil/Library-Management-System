@@ -152,7 +152,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="../pages/rtl.html">
+                <a class="nav-link  " href="Subscribersl">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -422,7 +422,7 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-body px-0 pt-0 pb-2">
-                        <form class="row g-3" action="{{$book->slug}}/update" method="POST">
+                        <form class="row g-3" action="{{$book->slug}}/update" method="post">
                             @csrf
                             <div class="col-md-6">
                                 <label for="titleOfBook"
@@ -430,7 +430,7 @@
                                     Title Of Book
                                 </label>
                                 <input type="text" name="title" class="form-control" id="titleOfBook"
-                                       placeholder="{{$book->title}}" />
+                                       placeholder="{{$book->title}}"/>
                             </div>
                             <div class="col-md-6">
                                 <label for="nameOfAuthor"

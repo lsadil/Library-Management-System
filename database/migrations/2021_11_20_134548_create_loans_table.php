@@ -15,6 +15,7 @@ class CreateLoansTable extends Migration
     {
         Schema::create('loans', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("subscriber_id");
             $table->dateTime('loan_end');
             $table->dateTime('loan_turn_in');
             $table->timestamps();

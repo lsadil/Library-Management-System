@@ -74,7 +74,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  active" href="Books">
+                    <a class="nav-link  active" href="">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
@@ -153,7 +153,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  " href="../pages/rtl.html">
+                    <a class="nav-link  " href="Subscribers">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -469,9 +469,9 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label for="langage"
-                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Langage</label>
-                                    <input class="form-control" list="datalistOptions2" id="langage"
-                                           placeholder="Select Langage...">
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Language</label>
+                                    <input class="form-control" name="language" list="datalistOptions2" id="langage"
+                                           placeholder="Select Language...">
                                     <datalist id="datalistOptions2">
                                         <option value="French">
                                         <option value="English">
@@ -498,11 +498,11 @@
                                 <div class="col-lg-6 col-md-12 mb-2">
                                     <label for="Category"
                                            class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Category</label>
-                                    <input class="form-control" list="datalistOptions" id="Category"
+                                    <input class="form-control" name="category" list="datalistOptions" id="Category"
                                            placeholder="Select Category...">
                                     <datalist id="datalistOptions">
                                         <option value="Polar">
-                                        <option value="Documentaire">
+                                        <option value="Documentary">
                                         <option value="Etude">
                                         <option value="Comics">
                                     </datalist>
