@@ -69,9 +69,17 @@
                     </a>
                 </li>
                 <li class="nav-item">
+<<<<<<< HEAD
                     <a class="nav-link  active" href="Books">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg">
+=======
+                    <a class="nav-link  active" href="">
+                        <div
+                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg">
+>>>>>>> e9d35f0ce888892edaac7db5a06618212e46c270
                                 <title>Book</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -132,9 +140,17 @@
                     </a>
                 </li>
                 <li class="nav-item">
+<<<<<<< HEAD
                     <a class="nav-link  " href="../pages/rtl.html">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg">
+=======
+                    <a class="nav-link  " href="Subscribers">
+                        <div
+                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg">
+>>>>>>> e9d35f0ce888892edaac7db5a06618212e46c270
                                 <title>Subscribers</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -406,8 +422,15 @@
                                     <input type="text" name="editor" class="form-control" id="nameOfEditor" />
                                 </div>
                                 <div class="col-md-4">
+<<<<<<< HEAD
                                     <label for="langage" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Langage</label>
                                     <input class="form-control" list="datalistOptions2" id="langage" placeholder="Select Langage...">
+=======
+                                    <label for="langage"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Language</label>
+                                    <input class="form-control" name="language" list="datalistOptions2" id="langage"
+                                           placeholder="Select Language...">
+>>>>>>> e9d35f0ce888892edaac7db5a06618212e46c270
                                     <datalist id="datalistOptions2">
                                         <option value="French">
                                         <option value="English">
@@ -429,11 +452,18 @@
                                     <textarea class="form-control" name="summary" id="descriptionOfBook" rows="10"></textarea>
                                 </div>
                                 <div class="col-lg-6 col-md-12 mb-2">
+<<<<<<< HEAD
                                     <label for="Category" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Category</label>
                                     <input class="form-control" list="datalistOptions" id="Category" placeholder="Select Category...">
+=======
+                                    <label for="Category"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Category</label>
+                                    <input class="form-control" name="category" list="datalistOptions" id="Category"
+                                           placeholder="Select Category...">
+>>>>>>> e9d35f0ce888892edaac7db5a06618212e46c270
                                     <datalist id="datalistOptions">
                                         <option value="Polar">
-                                        <option value="Documentaire">
+                                        <option value="Documentary">
                                         <option value="Etude">
                                         <option value="Comics">
                                     </datalist>

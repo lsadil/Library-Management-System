@@ -12,7 +12,7 @@ class BookFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             'title' => $this->faker->word(),
@@ -20,9 +20,9 @@ class BookFactory extends Factory
             'author' => $this->faker->name(),
             'category_id' => Category::factory(),
             'editor' => $this->faker->name(),
-            'summary' => $this->faker->sentence(10,true),
+            'summary' => $this->faker->sentence(10, true),
             'ISBN' => $this->faker->isbn10(),
-            'number_of_copies' => $this->faker->numberBetween(1,20),
+            'number_of_copies' => $this->faker->numberBetween(1, 20),
             'language' => $this->faker->word(),
             'year' => $this->faker->year(),
             'image_url' => $this->faker->imageUrl()
