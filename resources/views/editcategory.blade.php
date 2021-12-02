@@ -376,12 +376,6 @@
                                     </label>
                                     <input type="text" name="name" class="form-control" id="nameOfCategory" placeholder="XXX" /> <!-- $category->title -->
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="ID" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                        ID
-                                    </label>
-                                    <input type="text" class="form-control " id="ID" placeholder="27" /> <!-- $category->id -->
-                                </div>
                                 <div class="col-md-12">
                                     <button type="submit" class="btn" style="background-color: green; color: #fff">
                                         Save

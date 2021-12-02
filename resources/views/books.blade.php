@@ -111,7 +111,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link  " href="../pages/virtual-reality.html">
-                        <!-- check ça -->
+
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                 <title>Keywords</title>
@@ -393,6 +393,7 @@
                                                 Number Of Issues
                                             </th>
                                             <th class="text-secondary opacity-7"></th>
+                                            <th class="text-secondary opacity-7"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -418,6 +419,11 @@
                                             <td class="align-middle">
                                                 <a href="EditBook/{{$book->slug}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                                     Edit
+                                                </a>
+                                            </td>
+                                            <td class="align-middle">
+                                                <a href="/" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete Book">
+                                                    Delete
                                                 </a>
                                             </td>
                                         </tr>

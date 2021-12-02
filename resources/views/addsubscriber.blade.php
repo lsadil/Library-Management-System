@@ -451,7 +451,7 @@
                                            class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Birthday
                                     </label>
-                                    <input type="date" class="form-control" id="date"/>
+                                    <input type="date" name="birthday" class="form-control" id="date"/>
                                 </div>
                                 <div class="col-md-12">
                                     <button type="submit" class="btn" style="background-color: green; color: #fff">

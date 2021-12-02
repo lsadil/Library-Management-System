@@ -442,6 +442,7 @@
                                         ID
                                     </th>
                                     <th class="text-secondary opacity-7"></th>
+                                    <th class="text-secondary opacity-7"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -463,6 +464,13 @@
                                                class="text-secondary font-weight-bold text-xs"
                                                data-toggle="tooltip" data-original-title="Edit user">
                                                 Edit
+                                            </a>
+                                        </td>
+                                        <td class="align-middle">
+                                            <a href="/"
+                                               class="text-secondary font-weight-bold text-xs"
+                                               data-toggle="tooltip" data-original-title="Delete category">
+                                                Delete
                                             </a>
                                         </td>
                                     </tr>
