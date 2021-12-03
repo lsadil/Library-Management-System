@@ -372,40 +372,51 @@
                             <form class="row g-3" action="AddBook/add" method="post">
                                 @csrf
                                 <div class="col-md-6">
-                                    <label for="titleOfBook" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    <label for="titleOfBook"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Title Of Book
                                     </label>
-                                    <input type="text" name="title" class="form-control" id="titleOfBook" />
+                                    <input type="text" name="title" class="form-control" id="titleOfBook"/>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="nameOfAuthor" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    <label for="nameOfAuthor"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Name Of Author
                                     </label>
-                                    <input type="text" name="author" class="form-control" id="nameOfAuthor" />
+                                    <input type="text" name="author" class="form-control" id="nameOfAuthor"/>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="ID" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                        ID
-                                    </label>
-                                    <input type="text" class="form-control " id="ID" />
+                                    <label for="Category"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Category</label>
+                                    <input class="form-control" name="category" list="datalistOptions" id="Category"
+                                           placeholder="Select Category...">
+                                    <datalist id="datalistOptions">
+                                        <option value="Polar">
+                                        <option value="Documentary">
+                                        <option value="Etude">
+                                        <option value="Comics">
+                                    </datalist>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="ISBN" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    <label for="ISBN"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         ISBN
                                     </label>
-                                    <input type="number" class="form-control " id="ISBN" />
+                                    <input type="number" class="form-control " id="ISBN"/>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="numberOfIssues" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    <label for="numberOfIssues"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Number Of Issues
                                     </label>
-                                    <input type="number" class="form-control" id="numberOfIssues" />
+                                    <input type="number" class="form-control" id="numberOfIssues"/>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="nameOfEditor" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    <label for="nameOfEditor"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Name Of Editor
                                     </label>
-                                    <input type="text" name="editor" class="form-control" id="nameOfEditor" />
+                                    <input type="text" name="editor" class="form-control" id="nameOfEditor"/>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="langage"
@@ -431,18 +442,6 @@
                                         Description Of Book
                                     </label>
                                     <textarea class="form-control" name="summary" id="descriptionOfBook" rows="10"></textarea>
-                                </div>
-                                <div class="col-lg-6 col-md-12 mb-2">
-                                    <label for="Category"
-                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Category</label>
-                                    <input class="form-control" name="category" list="datalistOptions" id="Category"
-                                           placeholder="Select Category...">
-                                    <datalist id="datalistOptions">
-                                        <option value="Polar">
-                                        <option value="Documentary">
-                                        <option value="Etude">
-                                        <option value="Comics">
-                                    </datalist>
                                 </div>
                                 <div class="col-md-12">
                                     <label for="image" class="form-label">

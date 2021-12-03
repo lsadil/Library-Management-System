@@ -423,7 +423,7 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-body px-0 pt-0 pb-2">
-                            <form class="row g-3" action="addsubscriber/add" method="post">
+                            <form class="row g-3" action="AddSubscriber/add" method="post">
                                 @csrf
                                 <div class="col-md-6">
                                     <label for="firstName"
@@ -438,13 +438,6 @@
                                         Last Name
                                     </label>
                                     <input type="text" name="last_name" class="form-control" id="lastName"/>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="ID"
-                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                        ID
-                                    </label>
-                                    <input type="text" class="form-control " id="ID"/>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="date"

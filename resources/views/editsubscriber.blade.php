@@ -423,32 +423,35 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-body px-0 pt-0 pb-2">
-                            <form class="row g-3" action="editsubscriber/edit" method="post">
+                            <form class="row g-3" action="{{$subscriber->id}}/edit" method="post">
                                 @csrf
                                 <div class="col-md-6">
                                     <label for="firstName"
                                            class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         First Name
                                     </label>
-                                    <input type="text" name="first_name" class="form-control" id="firstName" placeholder="{{$subscriber->first_name}}"/>
+                                    <input type="text" name="first_name" class="form-control" id="firstName"
+                                           placeholder="{{$subscriber->first_name}}"/>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="lastName"
                                            class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Last Name
                                     </label>
-                                    <input type="text" name="last_name" class="form-control" id="lastName" placeholder="{{$subscriber->last_name}}"/>
+                                    <input type="text" name="last_name" class="form-control" id="lastName"
+                                           placeholder="{{$subscriber->last_name}}"/>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="date"
                                            class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Birthday
                                     </label>
-                                    <input type="date" name="birthday" class="form-control" id="date" placeholder="{{$subscriber->birthday}}"/>
+                                    <input type="date" name="birthday" class="form-control" id="date"
+                                           placeholder="{{$subscriber->birthday}}"/>
                                 </div>
                                 <div class="col-md-12">
                                     <button type="submit" class="btn" style="background-color: green; color: #fff">
-                                        Submit
+                                        Save
                                     </button>
                                 </div>
                             </form>

@@ -17,10 +17,10 @@ class BookController extends Controller
         $book->summary = $request->input('summary');
         $book->slug = (new BookFactory)->definition()['slug'];
         $book->category_id = $request->input('category');
-        $book->ISBN = 234809039248;
+        $book->ISBN = $request->input('ISBN');;
         $book->number_of_copies = 1;
         $book->language = 'english';
-        $book->year = 2021;
+        $book->year = $request->input('year');;
         $book->image_url = 'test';
         $book->save();
         return redirect('Books');
