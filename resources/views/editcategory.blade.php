@@ -414,23 +414,6 @@
                     </li>
                 </ul>
             </div>
-<<<<<<< HEAD
-        </nav>
-        <!-- End Navbar -->
-        <div class="container-fluid py-4">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card mb-4">
-                        <div class="card-body px-0 pt-0 pb-2">
-                            <form class="row g-3" action="category/update" method="POST"> <!-- $category->slug/update -->
-                                @csrf
-                                <div class="col-md-6">
-                                    <label for="nameOfCategory" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                        Name Of Category
-                                    </label>
-                                    <input type="text" name="name" class="form-control" id="nameOfCategory" placeholder="XXX" /> <!-- $category->title -->
-                                </div>
-=======
         </div>
     </nav>
     <!-- End Navbar -->
@@ -459,7 +442,6 @@
                         <div class="col-md-12">
                             <form class="row g-3" action="{{$category->name}}/delete" method="post">
                                 <!-- $category->slug/delete -->
->>>>>>> e9d35f0ce888892edaac7db5a06618212e46c270
                                 <div class="col-md-12">
                                     @csrf
                                     <button type="" class="btn btn-danger" style="color: #fff">

@@ -126,27 +126,6 @@
                                         </g>
                                     </g>
                                 </g>
-<<<<<<< HEAD
-                            </svg>
-                        </div>
-                        <span class="nav-link-text ms-1">Keywords</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link  " href="../pages/rtl.html">
-                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                <title>Subscribers</title>
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                        <g transform="translate(1716.000000, 291.000000)">
-                                            <g transform="translate(304.000000, 151.000000)">
-                                                <polygon class="color-background opacity-6" points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667"></polygon>
-                                                <path class="color-background opacity-6" d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z"></path>
-                                                <path class="color-background" d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z"></path>
-                                            </g>
-=======
-                            </g>
                         </svg>
                     </div>
                     <span class="nav-link-text ms-1">Keywords</span>
@@ -169,7 +148,6 @@
                                                   d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z"></path>
                                             <path class="color-background"
                                                   d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z"></path>
->>>>>>> e9d35f0ce888892edaac7db5a06618212e46c270
                                         </g>
                                     </g>
                                 </g>
@@ -387,7 +365,6 @@
                     </ul>
                 </div>
             </div>
-<<<<<<< HEAD
         </nav>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
@@ -454,120 +431,6 @@
                                     </label>
                                     <input type="number" class="form-control " id="date" />
                                 </div>
-=======
-        </div>
-    </nav>
-    <!-- End Navbar -->
-    <div class="container-fluid py-4">
-        <div class="row">
-            <div class="col-12">
-                <div class="card mb-4">
-                    <div class="card-body px-0 pt-0 pb-2">
-                        <form class="row g-3" action="{{$book->slug}}/update" method="post">
-                            @csrf
-                            <div class="col-md-6">
-                                <label for="titleOfBook"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                    Title Of Book
-                                </label>
-                                <input type="text" name="title" class="form-control" id="titleOfBook"
-                                       placeholder="{{$book->title}}"/>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="nameOfAuthor"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                    Name Of Author
-                                </label>
-                                <input type="text" name="author" class="form-control" id="nameOfAuthor"
-                                       placeholder="{{$book->author}}"/>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="ID"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                    ID
-                                </label>
-                                <input type="text" class="form-control " id="ID" placeholder="{{$book->id}}"/>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="ISBN"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                    ISBN
-                                </label>
-                                <input type="number" name="ISBN" class="form-control " id="ISBN"
-                                       placeholder="{{$book->ISBN}}"/>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="numberOfIssues"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                    Number Of Issues
-                                </label>
-                                <input type="number" name="numberOfCopies" class="form-control" id="numberOfIssues"
-                                       placeholder="{{$book->number_of_copies}}"/>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="nameOfEditor"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                    Name Of Editor
-                                </label>
-                                <input type="text" name="editor" class="form-control" id="nameOfEditor"
-                                       placeholder="{{$book->editor}}"/>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="language"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Language</label>
-                                <input class="form-control" list="datalistOptions" id="language"
-                                       placeholder="{{$book->language}}">
-                                <datalist id="datalistOptions">
-                                    <option value="French">
-                                    <option value="English">
-                                    <option value="Arabic">
-                                    <option value="Spanish">
-                                    <option value="German">
-                                </datalist>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="date"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                    Date
-                                </label>
-                                <input type="date" class="form-control" id="date"/>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="descriptionOfBook"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                    Description Of Book
-                                </label>
-                                <textarea class="form-control" name="summary" id="descriptionOfBook" rows="10"
-                                          placeholder="{{$book->summary}}"></textarea>
-                            </div>
-                            <div class="col-lg-6 col-md-12 mb-3">
-                                <label for="Category"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Category</label>
-                                <input class="form-control" list="datalistOptions2" id="Category"
-                                       placeholder="{{$book->category->name}}">
-                                <datalist id="datalistOptions2">
-                                    <option value="Polar">
-                                    <option value="Documentary">
-                                    <option value="Studies">
-                                    <option value="Comics">
-                                </datalist>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="image" class="form-label">
-                                    Book Picture
-                                </label>
-                                <input type="file" class="form-control" id="image"/>
-                            </div>
-                            <div class="col-md-12">
-                                <button type="submit" class="btn" style="background-color: green; color: #fff">
-                                    Save
-                                </button>
-                            </div>
-                        </form>
-                        <div class="col-md-12">
-
-                            <form class="row g-3" action="{{$book->slug}}/delete" method="POST">
->>>>>>> e9d35f0ce888892edaac7db5a06618212e46c270
                                 <div class="col-md-12">
                                     <label for="descriptionOfBook" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Description Of Book
@@ -689,3 +552,4 @@
 </body>
 
 </html>
+
