@@ -21,16 +21,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('books', [
-        'books' => Book::with('category')->get()
-    ]);
+    return view('home');
 });
 
 
 //Books
 Route::get('Books', function () {
     return view('books', [
-        'books' => Book::all()
+        'books' => Book::with('category')->get()
     ]);
 });
 
