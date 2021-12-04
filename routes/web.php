@@ -6,6 +6,7 @@ use App\Http\Controllers\SubscriberController;
 use App\Models\Book;
 use App\Models\Category;
 use App\Models\Keyword;
+use App\Models\Language;
 use App\Models\Subscriber;
 use Illuminate\Support\Facades\Route;
 
@@ -102,5 +103,6 @@ Route::get('EditSubscriber/{subscriber:id}', function (Subscriber $subscriber) {
 
 Route::post('AddSubscriber/add', [SubscriberController::class, 'create']);
 Route::post('EditSubscriber/{subscriber:id}/edit', [SubscriberController::class, 'update']);
+Route::post('EditSubscriber/{subscriber:id}/delete', [SubscriberController::class, 'destroy']);
 
 

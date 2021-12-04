@@ -27,10 +27,10 @@ class SubscriberController extends Controller
         return redirect('Subscribers');
     }
 
-//    public function destroy($name)
-//    {
-//        $categrory = Category::firstWhere('name', $name);
-//        $categrory->delete();
-//        return redirect('Categories');
-//    }
+    public function destroy($id)
+    {
+        $subscriber = Subscriber::firstWhere('id', $id);
+        $subscriber->delete();
+        return redirect('Subscribers');
+    }
 }

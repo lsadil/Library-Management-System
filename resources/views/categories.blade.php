@@ -52,7 +52,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link  " href="../resources/views/Home">
+                <a class="nav-link  " href="/">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
@@ -125,7 +125,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="../resources/views/keywords">
+                <a class="nav-link  " href="Keywords">
                     <!-- check ça -->
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -178,7 +178,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="../pages/rtl.html">
+                <a class="nav-link  " href="Users">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -467,11 +467,15 @@
                                             </a>
                                         </td>
                                         <td class="align-middle">
-                                            <a href="/"
-                                               class="text-secondary font-weight-bold text-xs"
-                                               data-toggle="tooltip" data-original-title="Delete category">
-                                                Delete
-                                            </a>
+                                            <form class="row g-3" action="editCategory/{{$category->name}}/delete"
+                                                  method="POST">
+                                                <div class="col-md-12">
+                                                    @csrf
+                                                    <button type="" class="btn btn-danger" style="color: #fff">
+                                                        Delete
+                                                    </button>
+                                                </div>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

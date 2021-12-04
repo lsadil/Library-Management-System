@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Language;
 use Database\Factories\BookFactory;
 use Illuminate\Http\Request;
 
@@ -16,10 +17,10 @@ class BookController extends Controller
         $book->editor = $request->input('editor');
         $book->summary = $request->input('summary');
         $book->slug = (new BookFactory)->definition()['slug'];
-        $book->category_id = $request->input('category');
+        $book->category_id = '1';
         $book->ISBN = $request->input('ISBN');;
-        $book->number_of_copies = 1;
-        $book->language = 'english';
+        $book->number_of_copies = $request->input('number_of_copies');
+        $book->language = $request->input('language');
         $book->year = $request->input('year');;
         $book->image_url = 'test';
         $book->save();
@@ -33,6 +34,7 @@ class BookController extends Controller
         $book->author = ($request->filled('author')) ? ($request->input('author')) : $book->author;
         $book->editor = ($request->filled('editor')) ? ($request->input('editor')) : $book->editor;
         $book->summary = ($request->filled('summary')) ? ($request->input('summary')) : $book->summary;
+        $book->language = ($request->filled('language')) ? ($request->input('language')) : $book->language;
         $book->save();
         return redirect('Books');
     }

@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Category;
+use App\Models\Language;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BookFactory extends Factory

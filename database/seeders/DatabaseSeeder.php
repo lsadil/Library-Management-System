@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Book;
+use App\Models\Language;
 use App\Models\Subscriber;
 use Illuminate\Database\Seeder;
 

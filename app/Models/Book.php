@@ -22,6 +22,11 @@ class Book extends Model
         return $this->hasMany(Keyword::class);
     }
 
+    public function language(): HasOne
+    {
+        return $this->hasOne(Language::class);
+    }
+
     public function loan(): HasOne
     {
         return $this->hasOne(Loan::class);
