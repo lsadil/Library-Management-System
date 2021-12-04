@@ -105,3 +105,4 @@ Route::get('EditSubscriber/{subscriber:id}', function (Subscriber $subscriber) {
 Route::post('AddSubscriber/add', [SubscriberController::class, 'create']);
 Route::post('EditSubscriber/{subscriber:id}/edit', [SubscriberController::class, 'update']);
 
+

@@ -455,6 +455,16 @@
                                     </button>
                                 </div>
                             </form>
+                            <div class="col-md-12">
+                                <form class="row g-3" action="{{$subscriber->slug}}/delete" method="POST">
+                                    <div class="col-md-12">
+                                        @csrf
+                                        <button type="" class="btn btn-danger" style="color: #fff">
+                                            Delete Book
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
