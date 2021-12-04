@@ -449,6 +449,7 @@
                                         ID
                                     </th>
                                     <th class="text-secondary opacity-7"></th>
+                                    <th class="text-secondary opacity-7"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -476,6 +477,17 @@
                                                data-original-title="Edit user">
                                                 Edit
                                             </a>
+                                        </td>
+                                        <td class="align-middle">
+                                            <form class="row g-3" action="editsubscriber/{{$subscriber->slug}}/delete"
+                                                  method="POST">
+                                                <div class="col-md-12">
+                                                    @csrf
+                                                    <button type="" class="btn btn-danger" style="color: #fff">
+                                                        Delete
+                                                    </button>
+                                                </div>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
