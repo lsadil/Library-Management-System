@@ -538,7 +538,8 @@
                         </h5>
                       </a>
                       <p class="mb-4 text-sm">
-                        
+                      Harry Potter has never played a sport while flying on a broomstick. He's never worn a Cloak of Invisibility, befriended a half-giant, or helped hatch a dragon. All Harry knows is a miserable life with the Dursleys: his horrible aunt and uncle and their abominable son, Dudley. Harry's room is a tiny Cupboard Under the Stairs, 
+                      he hasn't had a birthday party in ten years, and his birthday present is his uncle's old socks...
                       </p>
                       <div class="d-flex align-items-center justify-content-between">
                         <button type="button" class="btn btn-outline-primary btn-sm mb-0">View Book</button>
