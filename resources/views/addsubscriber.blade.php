@@ -430,21 +430,21 @@
                                            class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         First Name
                                     </label>
-                                    <input type="text" name="first_name" class="form-control" id="firstName"/>
+                                    <input type="text" name="first_name" class="form-control" id="firstName" required/>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="lastName"
                                            class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Last Name
                                     </label>
-                                    <input type="text" name="last_name" class="form-control" id="lastName"/>
+                                    <input type="text" name="last_name" class="form-control" id="lastName" required/>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="date"
                                            class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                         Birthday
                                     </label>
-                                    <input type="date" name="birthday" class="form-control" id="date"/>
+                                    <input type="date" name="birthday" class="form-control" id="date" required/>
                                 </div>
                                 <div class="col-md-12">
                                     <button type="submit" class="btn" style="background-color: green; color: #fff">

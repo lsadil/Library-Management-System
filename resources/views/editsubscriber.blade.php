@@ -460,7 +460,7 @@
                                     <div class="col-md-12">
                                         @csrf
                                         <button type="" class="btn btn-danger" style="color: #fff">
-                                            Delete Book
+                                            Delete Subscriber
                                         </button>
                                     </div>
                                 </form>
