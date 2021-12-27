@@ -426,18 +426,11 @@
                             <form class="row g-3" action="AddUser/add" method="post">
                                 @csrf
                                 <div class="col-md-6">
-                                    <label for="firstName"
+                                    <label for="name"
                                            class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                        First Name
+                                        Name
                                     </label>
-                                    <input type="text" name="first_name" class="form-control" id="firstName"/>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="lastName"
-                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                        Last Name
-                                    </label>
-                                    <input type="text" name="last_name" class="form-control" id="lastName"/>
+                                    <input type="text" name="name" class="form-control" id="name"/>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="email"

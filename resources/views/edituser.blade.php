@@ -426,28 +426,20 @@
                             <form class="row g-3" action="{{$user->id}}/edit" method="post">
                                 @csrf
                                 <div class="col-md-6">
-                                    <label for="firstName"
+                                    <label for="name"
                                            class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                        First Name
+                                        Name
                                     </label>
-                                    <input type="text" name="first_name" class="form-control" id="firstName"
-                                           placeholder="{{$user->first_name}}"/>
+                                    <input type="text" name="name" class="form-control" id="name"
+                                           placeholder="{{$user->name}}"/>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="lastName"
+                                    <label for="email"
                                            class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                        Last Name
+                                        Email
                                     </label>
-                                    <input type="text" name="last_name" class="form-control" id="lastName"
-                                           placeholder="{{$subscriber->last_name}}"/>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="pseudo"
-                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                        Pseudo
-                                    </label>
-                                    <input type="text" name="pseudu" class="form-control" id="pseudo"
-                                           placeholder="{{$user->pseudo}}"/>
+                                    <input type="email" name="email" class="form-control" id="email"
+                                           placeholder="{{$user->email}}"/>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="password"
