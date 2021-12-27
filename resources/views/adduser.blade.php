@@ -440,11 +440,11 @@
                                     <input type="text" name="last_name" class="form-control" id="lastName"/>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="pseudo"
+                                    <label for="email"
                                            class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                        Pseudo
+                                        Email
                                     </label>
-                                    <input type="text" name="pseudo" class="form-control" id="pseudo"/>
+                                    <input type="text" name="email" class="form-control" id="email"/>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="password"

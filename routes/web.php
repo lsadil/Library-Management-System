@@ -3,11 +3,13 @@
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\UserController;
 use App\Models\Book;
 use App\Models\Category;
 use App\Models\Keyword;
 use App\Models\Language;
 use App\Models\Subscriber;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -105,4 +107,27 @@ Route::post('AddSubscriber/add', [SubscriberController::class, 'create']);
 Route::post('EditSubscriber/{subscriber:id}/edit', [SubscriberController::class, 'update']);
 Route::post('EditSubscriber/{subscriber:id}/delete', [SubscriberController::class, 'destroy']);
 
+//Users
+Route::get('Users', function () {
+    return view('users', [
+        'users' => User::all()
+    ]);
+});
 
+Route::get('AddUsers', function () {
+    return view('adduser');
+});
+
+Route::post('AddUser/add', [UserController::class, 'create']);
+Route::post('EditUser/{user:id}/delete', [UserController::class, 'destroy']);
+
+
+// Profile and sign in
+
+Route::get('Profile', function () {
+    return view('profile');
+});
+
+Route::get('Sign-in', function () {
+    return view('signin');
+});
