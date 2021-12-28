@@ -422,7 +422,7 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-body px-0 pt-0 pb-2">
-                        <form class="row g-3" action="{{$category->name}}/update" method="post">
+                        <form class="row g-3 p-3" action="{{$category->name}}/update" method="post">
                             <!-- $category->slug/update -->
                             @csrf
                             <div class="col-md-6">
