@@ -15,7 +15,10 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-
+<style type="text/css">
+	table {border-spacing:0px 10px;}
+	tr.survol:hover{background-color:#ADD8E6;}
+</style>
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -454,7 +457,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach ($subscribers as $subscriber)
-                                    <tr>
+                                    <tr class="survol"  onclick="location.href='Profile'" style="cursor:pointer;">
                                         <td>
                                             <div class="d-flex px-2 py-1">
                                                 <div class="d-flex flex-column justify-content-center">
