@@ -496,10 +496,29 @@
             </div>
             <div class="col-12 mt-4">
                 <div class="card mb-4">
+               
                     <div class="card-header pb-0 p-3">
-                        <h6 class="mb-1">Loaned Books</h6>
-                        <p class="text-sm">Listes des livres empruntés</p>
+                     <h6 class="mb-1">Loaned Books</h6> 
+                     <table class="table align-items-center mb-0">
+                            <thead>
+                            <tr>
+                     <th>  <p class="text-sm">Listes des livres empruntés</p> </th>
                     </div>
+                    <th>  </th>
+                    <th>  </th>
+                    <th>  </th>
+                    <th class="align-middle">
+                                            <form class="row g-3" >
+                                                <div class="col-md-12">
+                                                   
+                                                    <button type="" class="btn btn-success" style="color: #fff">
+                                                        Add Loans
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </th>
+</thead>
+</table>
                     <div class="card-body p-3">
                         <table class="table align-items-center mb-0">
                             <thead>
