@@ -537,7 +537,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach ($books as $book)
-                                    <tr class="cliquable" onclick="location.href='Detailbook/{{$book->slug}}'"
+                                    <tr class="cliquable" onclick="location.href='DetailBook/{{$book->slug}}'"
                                         style="cursor:pointer;">
                                         <td>
                                             <div class="d-flex px-2 py-1">

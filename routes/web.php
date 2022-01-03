@@ -31,13 +31,6 @@ Route::get('/', function () {
 
 
 //Books
-//Route::get('Books', function () {
-//    return view('books', [
-//        'books' => Book::with('category')->get()
-//    ]);
-//});
-
-Route::get('Books', [BookController::class, 'index']);
 
 Route::get('EditBook/{book:slug}', function (Book $book) {
     return view('editBook', [
@@ -49,15 +42,16 @@ Route::get('AddBook', function () {
     return view('addBook');
 });
 
-Route::get('editCategory/{category:slug}', function (Category $category) {
-    return view('books', [
-        'books' => $category
+Route::get('DetailBook/{book:slug}', function (Book $book) {
+    return view('detailbook', [
+        'book' => $book,
+        'loans' => Loan::with('subscriber')->where('book_id', $book->id)->get()
     ]);
 });
-
 Route::post('EditBook/{book:slug}/update', [BookController::class, 'update']);
 Route::post('EditBook/{book:slug}/delete', [BookController::class, 'destroy']);
 Route::post('AddBook/add', [BookController::class, 'create']);
+Route::get('Books', [BookController::class, 'index']);
 
 // Categories
 Route::get('Categories', function () {
