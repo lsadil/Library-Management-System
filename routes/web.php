@@ -105,7 +105,7 @@ Route::get('Profile/{subscriber:id}', function (Subscriber $subscriber) {
         'loans' => Loan::with('book', 'subscriber')->where('subscriber_id', $subscriber->id)->get(),
         'subscriber' => $subscriber
     ]);
-});
+})->name('Profile');
 
 Route::post('AddSubscriber/add', [SubscriberController::class, 'create']);
 Route::post('EditSubscriber/{subscriber:id}/edit', [SubscriberController::class, 'update']);
@@ -128,10 +128,16 @@ Route::get('EditUser/{user:id}', function (User $user) {
     ]);
 });
 
+Route::get('Profile/{subscriber:id}/AddLoan', function (Subscriber $subscriber) {
+    return view('addLoan', [
+        'subscriber' => $subscriber
+    ]);
+});
+
 Route::post('AddUser/add', [UserController::class, 'create']);
 Route::post('EditUser/{User:id}/edit', [UserController::class, 'update']);
 Route::post('EditUser/{user:id}/delete', [UserController::class, 'destroy']);
-
+Route::post('Profile/{subscriber:id}/AddLoan/add', [UserController::class, 'addLoan']);
 
 //sign in and log out
 

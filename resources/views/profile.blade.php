@@ -300,6 +300,8 @@
                     </li>
                 </ul>
             </div>
+        </ul>
+    </div>
 </aside>
 
 
@@ -327,13 +329,15 @@
                                 @csrf
                                 <a href="logout" class="nav-link text-body font-weight-bold px-0">
                                     <i class="fa fa-user me-sm-1"></i>
-                                    <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Log Out</button>
+                                    <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Log Out
+                                    </button>
                                 </a>
                             </form>
                         @else
                             <a href="Sign-in" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
-                                <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign in</button>
+                                <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign in
+                                </button>
                             </a>
                         @endauth
                     </li>
@@ -455,7 +459,7 @@
                 <div class="col-auto my-auto">
                     <div class="h-100">
                         <h5 class="mb-1">
-                            Mohammed B.
+                            {{$subscriber->first_name}}
                         </h5>
 
                     </div>
@@ -496,31 +500,25 @@
             </div>
             <div class="col-12 mt-4">
                 <div class="card mb-4">
-               
                     <div class="card-header pb-0 p-3">
-                     <h6 class="mb-1">Loaned Books</h6> 
-                     <table class="table align-items-center mb-0">
+                        <h6 class="mb-1">Loaned Books</h6>
+                        <table class="table align-items-center mb-0">
                             <thead>
                             <tr>
-                     <th>  <p class="text-sm">Listes des livres empruntés</p> </th>
+                                <th><p class="text-sm">Listes des livres empruntés</p></th>
                     </div>
-                    <th>  </th>
-                    <th>  </th>
-                    <th>  </th>
                     <th class="align-middle">
-                                            <form class="row g-3" >
-                                                <div class="col-md-12">
-                                                <form>
-                                                    
-         <input type="button" class="btn btn-success" onclick="window.location.href ='AddLoans/'" value="ADD LOAN"/>
-        
-      </form>
-                                                
-                                                </div>
-                                            </form>
-                                        </th>
-</thead>
-</table>
+                        <form class="row g-3">
+                            <div class="col-md-12">
+                                <form>
+                                    @csrf
+                                    <input type="button" class="btn btn-success"
+                                           onclick="window.location.href ='{{$subscriber->id}}/AddLoan'"
+                                           value="ADD LOAN"/>
+                                </form>
+                            </div>
+                        </form>
+                    </th>
                     <div class="card-body p-3">
                         <table class="table align-items-center mb-0">
                             <thead>

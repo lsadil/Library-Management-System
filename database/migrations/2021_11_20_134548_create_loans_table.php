@@ -19,7 +19,7 @@ class CreateLoansTable extends Migration
             $table->foreignId("book_id");
             $table->dateTime('loan_start');
             $table->dateTime('loan_end');
-            $table->dateTime('loan_turn_in');
+            $table->dateTime('loan_turn_in')->nullable();
             $table->timestamps();
         });
     }

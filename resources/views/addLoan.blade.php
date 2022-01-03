@@ -104,8 +104,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="Categories">
-                    <!-- check ça -->
+                <a class="nav-link" href="Categories">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
@@ -322,7 +321,7 @@
                     </div>
                 </div>
                 <ul class="navbar-nav  justify-content-end">
-                
+
                     <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                         <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                             <div class="sidenav-toggler-inner">
@@ -345,21 +344,25 @@
                         <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4"
                             aria-labelledby="dropdownMenuButton">
                             <li class="nav-item d-flex align-items-center">
-                            @auth
-                                <form method="post" action="/logout" class="text-xs">
-                                    @csrf
-                                    <a href="logout" class="nav-link text-body font-weight-bold px-0">
+                                @auth
+                                    <form method="post" action="/logout" class="text-xs">
+                                        @csrf
+                                        <a href="logout" class="nav-link text-body font-weight-bold px-0">
+                                            <i class="fa fa-user me-sm-1"></i>
+                                            <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">
+                                                Log Out
+                                            </button>
+                                        </a>
+                                    </form>
+                                @else
+                                    <a href="Sign-in" class="nav-link text-body font-weight-bold px-0">
                                         <i class="fa fa-user me-sm-1"></i>
-                                        <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Log Out</button>
+                                        <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign
+                                            in
+                                        </button>
                                     </a>
-                                </form>
-                            @else
-                                <a href="Sign-in" class="nav-link text-body font-weight-bold px-0">
-                                    <i class="fa fa-user me-sm-1"></i>
-                                    <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign in</button>
-                                </a>
-                            @endauth
-                        </li>
+                                @endauth
+                            </li>
                             <li class="mb-2">
                                 <a class="dropdown-item border-radius-md" href="javascript:;">
                                     <div class="d-flex py-1">
@@ -444,25 +447,38 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-body px-0 pt-0 pb-2">
-                        <form class="row g-3 p-3" >
+                        <form class="row g-3 p-3" method="post" action="AddLoan/add">
                             @csrf
                             <div class="col-md-6">
-                                    <label for="date"
-                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                           Loan start date
-                                     </label>
-                                    <input type="date" name="loan_start" class="form-control" id="date"
-                                      />  
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="date"
-                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                           Loan end date
-                                     </label>
-                                    <input type="date" name="loan_end" class="form-control" id="date"
-                                           />
-                                </div>
-                                
+                                <label for="text"
+                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    Book ISBN
+                                </label>
+                                <input type="text" name="book_ISBN" class="form-control" id="text"/>
+                                @error('book_ISBN')
+                                <p class="text-danger text-xs mt-2">{{$message}}</p>
+                                @enderror
+                            </div>
+                            <div class="col-md-6">
+                                <label for="date"
+                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    Loan start date
+                                </label>
+                                <input type="date" name="loan_start" class="form-control" id="date"/>
+                                @error('loan_start')
+                                <p class="text-danger text-xs mt-2">{{$message}}</p>
+                                @enderror
+                            </div>
+                            <div class="col-md-6">
+                                <label for="date"
+                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                    Loan end date
+                                </label>
+                                <input type="date" name="loan_end" class="form-control" id="date"/>
+                                @error('loan_end')
+                                <p class="text-danger text-xs mt-2">{{$message}}</p>
+                                @enderror
+                            </div>
                             <div class="col-md-12">
                                 <button type="submit" class="btn" style="background-color: green; color: #fff">
                                     Submit
