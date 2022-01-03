@@ -31,8 +31,8 @@
     <link href="{{asset('css/nucleo-svg.css')}}" rel="stylesheet"/>
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="{{asset('css/nucleo-svg.css')}}" rel="stylesheet" />
-  <!-- CSS Files -->
+    <link href="{{asset('css/nucleo-svg.css')}}" rel="stylesheet"/>
+    <!-- CSS Files -->
     <link id="pagestyle" href="{{asset('css/soft-ui-dashboard.css?v=1.0.3')}}" rel="stylesheet"/>
 </head>
 
@@ -50,7 +50,7 @@
                         <a class="navbar-brand m-0"
                            href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html" target="_blank">
                             <img src="{{asset('img/logos/logoLibrary.png')}}" class="navbar-brand-img h-100"
-                                 alt="mainn_logo">
+                                 alt="main_logo">
                             <span class="ms-1 font-weight-bold">Library</span>
                         </a>
                     </div>
@@ -80,10 +80,10 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link me-2" href="../resources/view/sign-in.html">
-                    <i class="fas fa-key opacity-6 text-dark me-1"></i>
-                    Sign In
-                  </a>
-                </li>
+                                    <i class="fas fa-key opacity-6 text-dark me-1"></i>
+                                    Sign In
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -99,29 +99,39 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
-                            <div class="card card-plain mt-8">
+                            <div class="card card-plain mt-8 mb-3">
                                 <img src="{{asset('img/illustrations/books.png')}}" class="navbar-brand-img h-100"
                                      alt="logo book">
-
-                                <p class="mb-0">Enter your email and password to sign in</p>
+                                <p class="mb-1">Enter your email and password to sign in</p>
                             </div>
                             <div class="card-body">
-                                <form role="form">
+                                <form method="post" action="/sessions">
+                                    @csrf
                                     <label>Email</label>
-                                    <div class="mb-3">
-                                        <input type="email" class="form-control" placeholder="Email" aria-label="Email"
-                                               aria-describedby="email-addon">
+                                    <div class="mb-1">
+                                        <input type="email" name="email" class="form-control" placeholder="Email"
+                                               aria-label="Email"
+                                               aria-describedby="email-addon" value="{{old('email')}}" required>
+                                        @error('email')
+                                        <p class="text-danger text-xs mt-2">{{$message}}</p>
+                                        @enderror
                                     </div>
                                     <label>Password</label>
-                                    <div class="mb-3">
-                                        <input type="email" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                                    <div class="mb-1">
+                                        <input type="password" name="password" class="form-control"
+                                               placeholder="Password"
+                                               aria-label="Password" aria-describedby="password-addon" required>
+                                        @error('password')
+                                        <p class="text-danger text-xs mt-2">{{$message}}</p>
+                                        @enderror
                                     </div>
-                                    <div class="form-check form-switch">
+                                    <div class="form-check form-switch mt-3">
                                         <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
                                         <label class="form-check-label" for="rememberMe">Remember me</label>
                                     </div>
                                     <div class="text-center">
-                                        <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
+                                        <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in
+                                        </button>
                                     </div>
                                 </form>
                             </div>
@@ -131,26 +141,26 @@
             </div>
         </div>
     </section>
-  </main>
+</main>
 
 <!--   Core JS Files   -->
-  <script src="{{asset('js/core/popper.min.js')}}"></script>
-  <script src="{{asset('js/core/bootstrap.min.js')}}"></script>
-  <script src="{{asset('js/plugins/perfect-scrollbar.min.js')}}"></script>
-  <script src="{{asset('js/plugins/smooth-scrollbar.min.js')}}"></script>
-  <script>
+<script src="{{asset('js/core/popper.min.js')}}"></script>
+<script src="{{asset('js/core/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/plugins/perfect-scrollbar.min.js')}}"></script>
+<script src="{{asset('js/plugins/smooth-scrollbar.min.js')}}"></script>
+<script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        var options = {
+            damping: '0.5'
+        }
+        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
-  </script>
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{asset('js/soft-ui-dashboard.min.js?v=1.0.3')}}"></script>
+</script>
+<!-- Github buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="{{asset('js/soft-ui-dashboard.min.js?v=1.0.3')}}"></script>
 </body>
 
 </html>

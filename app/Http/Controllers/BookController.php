@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
-use App\Models\Language;
 use Database\Factories\BookFactory;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    public function index()
+    {
+        return view('books', [
+            'books' => Book::latest()->filter(request(['title', 'author', 'ISBN', 'category', 'language', 'year']))->get()
+        ]);
+    }
+
     public function create(Request $request)
     {
         $book = new Book;
@@ -41,8 +47,7 @@ class BookController extends Controller
 
     public function destroy($slug)
     {
-        $book = Book::firstWhere('slug', $slug);
-        $book->delete();
+        Book::firstWhere('slug', $slug)->delete();
         return redirect('Books');
     }
 }

@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\UserController;
 use App\Models\Book;
 use App\Models\Category;
 use App\Models\Keyword;
 use App\Models\Language;
+use App\Models\Loan;
 use App\Models\Subscriber;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -29,11 +31,13 @@ Route::get('/', function () {
 
 
 //Books
-Route::get('Books', function () {
-    return view('books', [
-        'books' => Book::with('category')->get()
-    ]);
-});
+//Route::get('Books', function () {
+//    return view('books', [
+//        'books' => Book::with('category')->get()
+//    ]);
+//});
+
+Route::get('Books', [BookController::class, 'index']);
 
 Route::get('EditBook/{book:slug}', function (Book $book) {
     return view('editBook', [
@@ -54,7 +58,6 @@ Route::get('editCategory/{category:slug}', function (Category $category) {
 Route::post('EditBook/{book:slug}/update', [BookController::class, 'update']);
 Route::post('EditBook/{book:slug}/delete', [BookController::class, 'destroy']);
 Route::post('AddBook/add', [BookController::class, 'create']);
-
 
 // Categories
 Route::get('Categories', function () {
@@ -103,6 +106,13 @@ Route::get('EditSubscriber/{subscriber:id}', function (Subscriber $subscriber) {
     ]);
 });
 
+Route::get('Profile/{subscriber:id}', function (Subscriber $subscriber) {
+    return view('profile', [
+        'loans' => Loan::with('book', 'subscriber')->where('subscriber_id', $subscriber->id)->get(),
+        'subscriber' => $subscriber
+    ]);
+});
+
 Route::post('AddSubscriber/add', [SubscriberController::class, 'create']);
 Route::post('EditSubscriber/{subscriber:id}/edit', [SubscriberController::class, 'update']);
 Route::post('EditSubscriber/{subscriber:id}/delete', [SubscriberController::class, 'destroy']);
@@ -118,16 +128,22 @@ Route::get('AddUsers', function () {
     return view('adduser');
 });
 
+Route::get('EditUser/{user:id}', function (User $user) {
+    return view('edituser', [
+        'user' => $user
+    ]);
+});
+
 Route::post('AddUser/add', [UserController::class, 'create']);
+Route::post('EditUser/{User:id}/edit', [UserController::class, 'update']);
 Route::post('EditUser/{user:id}/delete', [UserController::class, 'destroy']);
 
 
-// Profile and sign in
-
-Route::get('Profile', function () {
-    return view('profile');
-});
+//sign in and log out
 
 Route::get('Sign-in', function () {
     return view('signin');
-});
+})->middleware('guest');
+
+Route::post('sessions', [SessionsController::class, 'store'])->middleware('guest');
+Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');

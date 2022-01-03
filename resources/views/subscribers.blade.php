@@ -316,10 +316,20 @@
                 </div>
                 <ul class="navbar-nav  justify-content-end">
                     <li class="nav-item d-flex align-items-center">
-                        <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
-                            <i class="fa fa-user me-sm-1"></i>
-                            <span class="d-sm-inline d-none">Sign In</span>
-                        </a>
+                        @auth
+                            <form method="post" action="/logout" class="text-xs">
+                                @csrf
+                                <a href="logout" class="nav-link text-body font-weight-bold px-0">
+                                    <i class="fa fa-user me-sm-1"></i>
+                                    <button type="submit" class="d-sm-inline d-none">Log Out</button>
+                                </a>
+                            </form>
+                        @else
+                            <a href="Sign-in" class="nav-link text-body font-weight-bold px-0">
+                                <i class="fa fa-user me-sm-1"></i>
+                                <span class="d-sm-inline d-none">Sign In</span>
+                            </a>
+                        @endauth
                     </li>
                     <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                         <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
@@ -457,7 +467,8 @@
                                 </thead>
                                 <tbody>
                                 @foreach ($subscribers as $subscriber)
-                                    <tr class="survol"  onclick="location.href='Profile'" style="cursor:pointer;">
+                                    <tr class="survol" onclick="location.href='Profile/{{$subscriber->id}}'"
+                                        style="cursor:pointer;">
                                         <td>
                                             <div class="d-flex px-2 py-1">
                                                 <div class="d-flex flex-column justify-content-center">
