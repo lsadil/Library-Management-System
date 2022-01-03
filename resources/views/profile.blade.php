@@ -510,10 +510,12 @@
                     <th class="align-middle">
                                             <form class="row g-3" >
                                                 <div class="col-md-12">
-                                                   
-                                                    <button type="" class="btn btn-success" style="color: #fff">
-                                                        Add Loans
-                                                    </button>
+                                                <form>
+                                                    
+         <input type="button" class="btn btn-success" onclick="window.location.href ='AddLoans/'" value="ADD LOAN"/>
+        
+      </form>
+                                                
                                                 </div>
                                             </form>
                                         </th>
