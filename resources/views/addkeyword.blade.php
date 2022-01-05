@@ -77,7 +77,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="Books">
+                <a class="nav-link " href="/Books">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
@@ -102,7 +102,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../pages/billing.html">
+                <a class="nav-link" href="/Categories">
                     <!-- check ça -->
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -128,7 +128,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  active " href="../pages/virtual-reality.html">
+                <a class="nav-link  active " href="/Keywords">
                     <!-- check ça -->
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -156,7 +156,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Subscribers">
+                <a class="nav-link" href="/Subscribers">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -183,7 +183,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="../pages/rtl.html">
+                <a class="nav-link  " href="/users">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -308,7 +308,9 @@
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                     <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Library</a>
                     </li>
-                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Keywords</li>
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:history.go(-1)">Keywords</a>
+                    </li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Add Keyword</li>
                 </ol>
                 <h6 class="font-weight-bolder mb-0">Add Keyword</h6>
             </nav>
