@@ -299,10 +299,9 @@
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                     <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Library </a>
                     </li>
-
-                       <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:history.go(-1)">Books</a>
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:history.go(-1)">Books</a>
                     </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Detail Book</li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Detail Book</li>
                 </ol>
                 <h6 class="font-weight-bolder mb-0">Detail Book</h6>
             </nav>
@@ -320,18 +319,20 @@
                                 @csrf
                                 <a href="logout" class="nav-link text-body font-weight-bold px-0">
                                     <i class="fa fa-user me-sm-1"></i>
-                                    <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Log Out</button>
+                                    <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Log Out
+                                    </button>
                                 </a>
                             </form>
                         @else
                             <a href="Sign-in" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
-                                <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign in</button>
+                                <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign in
+                                </button>
                             </a>
                         @endauth
                     </li>
                     <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-                        <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                        <a href="javascript:" class="nav-link text-body p-0" id="iconNavbarSidenav">
                             <div class="sidenav-toggler-inner">
                                 <i class="sidenav-toggler-line"></i>
                                 <i class="sidenav-toggler-line"></i>
@@ -340,12 +341,12 @@
                         </a>
                     </li>
                     <li class="nav-item px-3 d-flex align-items-center">
-                        <a href="javascript:;" class="nav-link text-body p-0">
+                        <a href="javascript:" class="nav-link text-body p-0">
                             <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
                         </a>
                     </li>
                     <li class="nav-item dropdown pe-2 d-flex align-items-center">
-                        <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton"
+                        <a href="javascript:" class="nav-link text-body p-0" id="dropdownMenuButton"
                            data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-bell cursor-pointer"></i>
                         </a>
@@ -437,7 +438,7 @@
                     <div class="card-body px-0 pt-0 pb-2 pt-2">
                         <div class="row">
                             <div class="col-lg-5 col-md-12">
-                                <img src="{{ asset('img/curved-images/curved6.jpg')}}"
+                                <img src="{{asset('storage/images/'.$book->image_url)}}"
                                      style="width:400px;height:500px;margin-left:10px; margin-right:10px;" alt="">
                             </div>
                             <div class="col-lg-5 col-md-12 m-2">
@@ -469,10 +470,10 @@
                                                         Last name
                                                     </th>
                                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                        Birthday
+                                                        Loaned
                                                     </th>
                                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                        ID
+                                                        Due
                                                     </th>
                                                     <th class="text-secondary opacity-7"></th>
                                                     <th class="text-secondary opacity-7"></th>
@@ -485,18 +486,18 @@
                                                         <td>
                                                             <div class="d-flex px-2 py-1">
                                                                 <div class="d-flex flex-column justify-content-center">
-                                                                    <h6 class="mb-0 text-sm"></h6>
+                                                                    <h6 class="mb-0 text-sm">{{$loan->subscriber->first_name}}</h6>
                                                                 </div>
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <p class="text-xs font-weight-bold mb-0"></p>
+                                                            <p class="text-xs font-weight-bold mb-0">{{$loan->subscriber->last_name}}</p>
                                                         </td>
                                                         <td class="align-middle text-center text-sm">
-                                                            <p class="text-xs font-weight-bold mb-0"></p>
+                                                            <p class="text-xs font-weight-bold mb-0">{{$loan->loan_start}}</p>
                                                         </td>
                                                         <td class="align-middle text-center text-sm">
-                                                            <p class="text-xs font-weight-bold mb-0"></p>
+                                                            <p class="text-xs font-weight-bold mb-0">{{$loan->loan_end}}</p>
                                                         </td>
                                                         <td class="align-middle">
                                                             <a href="EditSubscriber.html"

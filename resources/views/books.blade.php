@@ -17,8 +17,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <style type="text/css">
-	table {border-spacing:0px 10px;}
-	tr.cliquable:hover{background-color:#ADD8E6;}
+    table {
+        border-spacing: 0px 10px;
+    }
+
+    tr.cliquable:hover {
+        background-color: #ADD8E6;
+    }
 </style>
 <head>
     <meta charset="utf-8"/>
@@ -320,13 +325,15 @@
                                 @csrf
                                 <a href="logout" class="nav-link text-body font-weight-bold px-0">
                                     <i class="fa fa-user me-sm-1"></i>
-                                    <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Log Out</button>
+                                    <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Log Out
+                                    </button>
                                 </a>
                             </form>
                         @else
                             <a href="Sign-in" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
-                                <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign in</button>
+                                <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign in
+                                </button>
                             </a>
                         @endauth
                     </li>
@@ -505,6 +512,9 @@
                                 <button type="submit" class="btn" style="background-color: green; color: #fff">
                                     Search
                                 </button>
+                                <button type="reset" class="btn" style="background-color: orangered; color: #fff">
+                                    Reset
+                                </button>
                             </div>
                         </form>
 
@@ -523,7 +533,7 @@
                                         Of Books
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        ID
+                                        Number Of Copies
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Category
@@ -548,7 +558,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0">{{$book->id}}</p>
+                                            <p class="text-xs font-weight-bold mb-0">{{$book->number_of_copies}}</p>
                                         </td>
                                         <td class="align-middle text-center text-sm">
                                             <p class="text-xs font-weight-bold mb-0">{{$book->category->name}}</p>

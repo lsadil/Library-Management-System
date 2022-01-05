@@ -41,6 +41,14 @@ class BookController extends Controller
         $book->editor = ($request->filled('editor')) ? ($request->input('editor')) : $book->editor;
         $book->summary = ($request->filled('summary')) ? ($request->input('summary')) : $book->summary;
         $book->language = ($request->filled('language')) ? ($request->input('language')) : $book->language;
+        if ($request->hasFile('photo')) {
+            $request->validate([
+                'image' => 'mimes:jpeg,bmp,png'
+            ]);
+
+            $request->file('photo')->store('images', 'public');
+            $book->image_url = $request->file('photo')->hashName();
+        }
         $book->save();
         return redirect('Books');
     }

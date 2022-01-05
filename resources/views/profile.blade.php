@@ -55,7 +55,7 @@
             <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="../resources/views/Home">
+                        <a class="nav-link" href="/">
                             <div
                                 class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
@@ -105,7 +105,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="Categories">
+                        <a class="nav-link  " href="/Categories">
                             <!-- check ça -->
                             <div
                                 class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -131,7 +131,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="Keywords">
+                        <a class="nav-link  " href="/Keywords">
                             <!-- check ça -->
                             <div
                                 class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -159,7 +159,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="Subscribers">
+                        <a class="nav-link " href="/Subscribers">
                             <div
                                 class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -186,7 +186,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="Users">
+                        <a class="nav-link  " href="/Users">
                             <div
                                 class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"

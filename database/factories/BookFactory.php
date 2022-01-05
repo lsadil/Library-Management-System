@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
 use App\Models\Language;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,7 +18,7 @@ class BookFactory extends Factory
             'title' => $this->faker->word(),
             'slug' => $this->faker->slug(),
             'author' => $this->faker->name(),
-            'category_id' => Category::factory(),
+            'category_id' => $this->faker->numberBetween(1, 5),
             'editor' => $this->faker->name(),
             'summary' => $this->faker->sentence(10, true),
             'ISBN' => $this->faker->isbn10(),
