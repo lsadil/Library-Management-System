@@ -15,7 +15,15 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
+<style type="text/css">
+    table {
+        border-spacing: 0px 10px;
+    }
 
+    tr.cliquable:hover {
+        background-color: #ADD8E6;
+    }
+</style>
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -444,7 +452,7 @@
                         <div class="table-responsive p-0">
                             <table class="table align-items-center mb-0">
                                 <thead>
-                                <tr>
+                                <tr >
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name
                                         Of Category
                                     </th>
@@ -457,7 +465,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach ($categories as $category)
-                                    <tr>
+                                    <tr class="cliquable" onclick="window.location.href ='detailCategory/{{$category->id}}'" style="cursor:pointer;">
                                         <td>
                                             <div class="d-flex px-2 py-1">
                                                 <div class="d-flex flex-column justify-content-center">
