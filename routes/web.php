@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Home');
+    return view('home');
 });
 
 
@@ -69,6 +69,13 @@ Route::get('editCategory/{category:name}', function (Category $category) {
         'category' => $category
     ]);
 });
+Route::get('detailCategory/{category:name}/', function (Category $category) {
+    return view('detailcategory', [
+        'category' => $category,
+        'books' =>Book::with('category')->where('category_id', $category->id)->get()
+    ]);
+});
+
 
 Route::post('addcategory/add', [CategoryController::class, 'create']);
 Route::post('editCategory/{category:name}/update', [CategoryController::class, 'update']);

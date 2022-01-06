@@ -473,29 +473,35 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($categories as $category)
-                                    <tr >
-                                    <td>
+                                <tbody>
+                                        @foreach ($books as $book)
+                                        <tr class="cliquable" onclick="location.href='DetailBook/{{$book->slug}}'" style="cursor:pointer;">
+                                            <td>
                                                 <div class="d-flex px-2 py-1">
                                                     <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">{{$category->book->title}}</h6>
-                                                        <p class="text-xs text-secondary mb-0">{{$category->book->author}}</p>
+                                                        <h6 class="mb-0 text-sm">{{$book->title}}</h6>
+
                                                     </div>
                                                 </div>
                                             </td>
-                                       
-                                        <td class="align-middle text-center text-sm">
-                                            <p class="text-xs font-weight-bold mb-0">{{$category->name}}</p>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-bold">{{$category->book->ISBN}}</span>
-                                        </td>
-                                       
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">{{$book->author}}</h6>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <p class="text-xs font-weight-bold mb-0">{{$book->category->name}}</p>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span class="text-secondary text-xs font-weight-bold">{{$book->ISBN}}</span>
+                                            </td>
                                         
-                                    </tr>
-                                @endforeach
-                                </tbody>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
                             </table>
                         </div>
                     </div>

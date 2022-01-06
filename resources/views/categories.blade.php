@@ -465,7 +465,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach ($categories as $category)
-                                    <tr class="cliquable" onclick="window.location.href ='detailCategory/{{$category->id}}'" style="cursor:pointer;">
+                                    <tr class="cliquable" onclick="window.location.href ='detailCategory/{{$category->name}}'" style="cursor:pointer;">
                                         <td>
                                             <div class="d-flex px-2 py-1">
                                                 <div class="d-flex flex-column justify-content-center">
