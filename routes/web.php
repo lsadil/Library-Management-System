@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\UserController;
@@ -25,10 +26,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
+//Route::get('/', function () {
+//    return view('home', []);
+//});
+Route::get('/', [ChartController::class, 'index']);
 
 //Books
 
@@ -114,6 +115,7 @@ Route::get('EditSubscriber/{subscriber:id}', function (Subscriber $subscriber) {
 Route::get('Profile/{subscriber:id}', function (Subscriber $subscriber) {
     return view('profile', [
         'loans' => Loan::with('book', 'subscriber')->where('subscriber_id', $subscriber->id)->get(),
+        'returnedLoans' => Loan::onlyTrashed()->with('book', 'subscriber')->where('subscriber_id', $subscriber->id)->get(),
         'subscriber' => $subscriber
     ]);
 })->name('Profile');
@@ -121,6 +123,8 @@ Route::get('Profile/{subscriber:id}', function (Subscriber $subscriber) {
 Route::post('AddSubscriber/add', [SubscriberController::class, 'create']);
 Route::post('EditSubscriber/{subscriber:id}/edit', [SubscriberController::class, 'update']);
 Route::post('EditSubscriber/{subscriber:id}/delete', [SubscriberController::class, 'destroy']);
+Route::post('Profile/{loan:id}/delete', [SubscriberController::class, 'destroyLoan']);
+
 
 //Users
 Route::get('Users', function () {

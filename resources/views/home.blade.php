@@ -34,6 +34,9 @@
 
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="{{ asset('css/nucleo-svg.css')}}" rel="stylesheet"/>
+    <script src="https://demos.creative-tim.com/test/soft-ui-dashboard-pro/assets/js/plugins/chartjs.min.js"
+            type="text/javascript"></script>
+
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('css/soft-ui-dashboard.css?v=1.0.3')}}" rel="stylesheet"/>
 </head>
@@ -211,13 +214,15 @@
                                 @csrf
                                 <a href="logout" class="nav-link text-body font-weight-bold px-0">
                                     <i class="fa fa-user me-sm-1"></i>
-                                    <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Log Out</button>
+                                    <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Log Out
+                                    </button>
                                 </a>
                             </form>
                         @else
                             <a href="Sign-in" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
-                                <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign in</button>
+                                <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign in
+                                </button>
                             </a>
                         @endauth
                     </li>
@@ -421,15 +426,14 @@
                                 <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
                             </div>
                         </div>
-                        <h6 class="ms-2 mt-4 mb-0"> Active Subscribers </h6>
-                        <p class="text-sm ms-2"> (<span class="font-weight-bolder">+15%</span>) than last month </p>
+                        <h6 class="ms-2 mt-4 mb-0"> Cumulated Books</h6>
                     </div>
                 </div>
             </div>
             <div class="col-lg-7">
                 <div class="card z-index-2">
                     <div class="card-header pb-0">
-                        <h6>Books overview</h6>
+                        <h6>Loans/Returns</h6>
                         <p class="text-sm">
                             <i class="fa fa-arrow-up text-success"></i>
                             <span class="font-weight-bold">4% more</span> in 2021
@@ -442,9 +446,21 @@
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="row mt-4">
+                <div class="col-lg-5 mb-lg-0 mb-4">
+                    <div class="card z-index-2">
+                        <div class="card-body p-3">
+                            <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
+                                <div class="chart">
+                                    <canvas id="pie-chart" class="chart-canvas" height="300px"></canvas>
+                                </div>
+                            </div>
+                            <h6 class="ms-2 mt-4 mb-0"> Cumulated Books</h6>
+                        </div>
+                    </div>
+                </div>
 
-    </div>
+            </div>
 </main>
 <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
@@ -537,18 +553,20 @@
 <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 
+    var booksc = <?php echo $booksc;?>;
+
     new Chart(ctx, {
         type: "bar",
         data: {
-            labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             datasets: [{
-                label: "Sales",
+                label: "Adds",
                 tension: 0.4,
                 borderWidth: 0,
                 borderRadius: 4,
                 borderSkipped: false,
                 backgroundColor: "#fff",
-                data: [450, 200, 100, 220, 500, 100, 400, 230, 500],
+                data: booksc,
                 maxBarThickness: 6
             },],
         },
@@ -594,7 +612,15 @@
                         drawTicks: false
                     },
                     ticks: {
-                        display: false
+                        display: true,
+                        padding: 10,
+                        color: '#b2b9bf',
+                        font: {
+                            size: 11,
+                            family: "Open Sans",
+                            style: 'normal',
+                            lineHeight: 2
+                        },
                     },
                 },
             },
@@ -616,12 +642,15 @@
     gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
     gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
 
+    var returns = <?php echo $returns;?>;
+    var loan = <?php echo $loan;?>;
+
     new Chart(ctx2, {
         type: "line",
         data: {
-            labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             datasets: [{
-                label: "Mobile apps",
+                label: "Loans",
                 tension: 0.4,
                 borderWidth: 0,
                 pointRadius: 0,
@@ -629,12 +658,11 @@
                 borderWidth: 3,
                 backgroundColor: gradientStroke1,
                 fill: true,
-                data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+                data: loan,
                 maxBarThickness: 6
-
             },
                 {
-                    label: "Websites",
+                    label: "Returns",
                     tension: 0.4,
                     borderWidth: 0,
                     pointRadius: 0,
@@ -642,7 +670,7 @@
                     borderWidth: 3,
                     backgroundColor: gradientStroke2,
                     fill: true,
-                    data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+                    data: returns,
                     maxBarThickness: 6
                 },
             ],
@@ -698,6 +726,64 @@
                             style: 'normal',
                             lineHeight: 2
                         },
+                    }
+                },
+            },
+        },
+    });
+
+    var ctx4 = document.getElementById("pie-chart").getContext("2d");
+    var booksWithC = <?php echo $booksWithC;?>;
+
+    new Chart(ctx4, {
+        type: "pie",
+        data: {
+            labels: ['Adventure', 'Thriller', 'Fantasy', 'Romance', 'Detective'],
+            datasets: [{
+                label: "test",
+                weight: 9,
+                cutout: 0,
+                tension: 0.9,
+                pointRadius: 2,
+                borderWidth: 2,
+                backgroundColor: ['#17c1e8', '#cb0c9f', '#3A416F', '#a8b8d8', '#878BB6'],
+                data: booksWithC,
+                fill: false
+            }],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false,
+                }
+            },
+            interaction: {
+                intersect: false,
+                mode: 'index',
+            },
+            scales: {
+                y: {
+                    grid: {
+                        drawBorder: true,
+                        display: false,
+                        drawOnChartArea: false,
+                        drawTicks: false,
+                    },
+                    ticks: {
+                        display: false
+                    }
+                },
+                x: {
+                    grid: {
+                        drawBorder: false,
+                        display: false,
+                        drawOnChartArea: false,
+                        drawTicks: false,
+                    },
+                    ticks: {
+                        display: false,
                     }
                 },
             },
