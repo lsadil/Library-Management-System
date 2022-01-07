@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Loan;
 use App\Models\Subscriber;
 use Illuminate\Http\Request;
 
@@ -32,5 +33,11 @@ class SubscriberController extends Controller
         $subscriber = Subscriber::firstWhere('id', $id);
         $subscriber->delete();
         return redirect('Subscribers');
+    }
+
+    public function destroyLoan($id)
+    {
+        Loan::firstWhere('id', $id)->delete();
+        return redirect()->back();
     }
 }

@@ -20,6 +20,7 @@ class CreateLoansTable extends Migration
             $table->dateTime('loan_start');
             $table->dateTime('loan_end');
             $table->dateTime('loan_turn_in')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

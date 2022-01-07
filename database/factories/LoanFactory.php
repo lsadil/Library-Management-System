@@ -13,11 +13,14 @@ class LoanFactory extends Factory
      */
     public function definition()
     {
+        $t = $this->faker->dateTimeBetween('-1 year', 'now');
+        $t2 = $this->faker->dateTimeBetween($t, 'now');
         return [
             'subscriber_id' => $this->faker->numberBetween(1, 25),
             'book_id' => $this->faker->numberBetween(1, 100),
-            'loan_start' => $this->faker->dateTimeBetween('-1 year', 'now'),
-            'loan_end' => $this->faker->dateTimeBetween('now', '1 year')
+            'loan_start' => $t,
+            'loan_end' => $t2,
+            'loan_turn_in' => $this->faker->dateTimeBetween($t, $t2),
         ];
     }
 }

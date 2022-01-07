@@ -25,7 +25,8 @@ class BookFactory extends Factory
             'number_of_copies' => $this->faker->numberBetween(1, 20),
             'language' => $this->faker->word(),
             'year' => $this->faker->year(),
-            'image_url' => $this->faker->imageUrl()
+            'image_url' => $this->faker->imageUrl(),
+            'added_in' => $this->faker->dateTimeBetween('-1 year', 'now')
         ];
     }
 }

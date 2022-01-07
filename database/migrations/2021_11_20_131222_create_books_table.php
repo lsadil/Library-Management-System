@@ -25,7 +25,8 @@ class CreateBooksTable extends Migration
             $table->integer('number_of_copies');
             $table->string('language');
             $table->integer('year');
-            $table->string('image_url');
+            $table->string('image_url')->nullable();
+            $table->dateTime('added_in');
             $table->timestamps();
             $table->timestamp('published_at')->nullable();
         });

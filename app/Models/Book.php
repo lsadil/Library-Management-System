@@ -12,6 +12,8 @@ class Book extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['image_url'];
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);

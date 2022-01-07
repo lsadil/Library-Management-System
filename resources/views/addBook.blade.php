@@ -17,7 +17,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}">
     <link rel="icon" type="image/png" href="{{ asset('img/favicon.png')}}">
@@ -25,28 +25,31 @@
         Library
     </title>
     <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
     <!-- Nucleo Icons -->
-    <link href="{{asset('css/nucleo-icons.css')}}" rel="stylesheet" />
-    <link href="{{asset('css/nucleo-svg.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/nucleo-icons.css')}}" rel="stylesheet"/>
+    <link href="{{asset('css/nucleo-svg.css')}}" rel="stylesheet"/>
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <link href="{{asset('css/nucleo-svg.css')}}" rel="stylesheet" />
-    <!-- CSS Files -->
-    <link id="pagestyle" href="{{asset('css/soft-ui-dashboard.css?v=1.0.3')}}" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+    <link href="{{asset('css/nucleo-svg.css')}}" rel="stylesheet"/>
+    <!-- CSS Files -->
+    <link id="pagestyle" href="{{asset('css/soft-ui-dashboard.css?v=1.0.3')}}" rel="stylesheet"/>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
-    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
-        <div class="sidenav-header">
-            <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0" href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html" target="_blank">
-                <img src="{{ asset('img/logo-ct.png')}}" class="navbar-brand-img h-100" alt="main_logo">
-                <span class="ms-1 font-weight-bold">Library</span>
-            </a>
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
+       id="sidenav-main">
+    <div class="sidenav-header">
+        <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+           aria-hidden="true" id="iconSidenav"></i>
+        <a class="navbar-brand m-0" href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html"
+           target="_blank">
+            <img src="{{ asset('img/logo-ct.png')}}" class="navbar-brand-img h-100" alt="main_logo">
+            <span class="ms-1 font-weight-bold">Library</span>
+        </a>
         </div>
         <hr class="horizontal dark mt-0">
         <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
@@ -294,7 +297,7 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-body px-0 pt-0 pb-2">
-                            <form class="row g-3 p-3" action="AddBook/add" method="post">
+                            <form class="row g-3 p-3" action="AddBook/add" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="col-md-6">
                                     <label for="titleOfBook" class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
@@ -374,7 +377,7 @@
                                     <label for="image" class="form-label">
                                         Book Picture
                                     </label>
-                                    <input type="file" class="form-control" id="image" required />
+                                    <input type="file" name="photo" class="form-control" id="image"/>
                                 </div>
                                 <div class="col-md-12">
                                     <button type="submit" class="btn" style="background-color: green; color: #fff">

@@ -388,12 +388,6 @@
                 <div class="card mb-4">
                     <div class="card-header pb-0 p-3">
                         <h6 class="mb-1">Loaned Books</h6>
-                        <table class="table align-items-center mb-0">
-                            <thead>
-                            <tr>
-                                <th><p class="text-sm">Listes des livres empruntés</p></th>
-                    </div>
-                    <th class="align-middle">
                         <form class="row g-3">
                             <div class="col-md-12">
                                 <form>
@@ -404,97 +398,135 @@
                                 </form>
                             </div>
                         </form>
-                    </th>
-                    <div class="card-body p-3">
-                        <table class="table align-items-center mb-0">
-                            <thead>
-                            <tr>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name
-                                    Of Books
-                                </th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                    ID
-                                </th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                    Category
-                                </th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                    Number Of Issues
-                                </th>
-                                <th class="text-secondary opacity-7"></th>
-                                <th class="text-secondary opacity-7"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach ($loans as $loan)
-
-                                <tr>
-                                    <td>
-                                        <div class="d-flex px-2 py-1">
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">{{$loan->book->title}}</h6>
-                                                <p class="text-xs text-secondary mb-0">{{$loan->book->author}}</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{$loan->book->id}}</p>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <p class="text-xs font-weight-bold mb-0">{{$loan->book->category->name}}</p>
-                                    </td>
-                                    <td class="align-middle text-center">
-                                        <span
-                                            class="text-secondary text-xs font-weight-bold">{{$loan->book->number_of_copies}}</span>
-                                    </td>
-                                    {{--                                    <td class="align-middle">--}}
-                                    {{--                                        <a href="EditBook/{{$loan->$book->slug}}"--}}
-                                    {{--                                           class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"--}}
-                                    {{--                                           data-original-title="Edit user">--}}
-                                    {{--                                            Edit--}}
-                                    {{--                                        </a>--}}
-                                    {{--                                    </td>--}}
-                                    {{--                                    <td class="align-middle">--}}
-                                    {{--                                        <form class="row g-3" action="EditBook/{{$book->slug}}/delete" method="POST">--}}
-                                    {{--                                            <div class="col-md-12">--}}
-                                    {{--                                                @csrf--}}
-                                    {{--                                                <button type="" class="btn btn-danger" style="color: #fff">--}}
-                                    {{--                                                    Delete--}}
-                                    {{--                                                </button>--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                        </form>--}}
-                                    {{--                                    </td>--}}
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
                     </div>
+                </div>
+                <div class="card-body p-3">
+                    <table class="table align-items-center mb-0">
+                        <thead>
+                        <tr>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name
+                                Of Books
+                            </th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                ID
+                            </th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                Loan Start
+                            </th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                Loan End
+                            </th>
+                            <th class="text-secondary opacity-7"></th>
+                            <th class="text-secondary opacity-7"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($loans as $loan)
+                            <tr>
+                                <td>
+                                    <div class="d-flex px-2 py-1">
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h6 class="mb-0 text-sm">{{$loan->book->title}}</h6>
+                                            <p class="text-xs text-secondary mb-0">{{$loan->book->author}}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="text-xs font-weight-bold mb-0">{{$loan->book->id}}</p>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    <p class="text-xs font-weight-bold mb-0">{{$loan->loan_start}}</p>
+                                </td>
+                                <td class="align-middle text-center">
+                                        <span
+                                            class="text-secondary text-xs font-weight-bold">{{$loan->loan_end}}</span>
+                                </td>
+                                <td class="align-middle">
+                                    <form class="row g-3" action="/Profile/{{$loan->id}}/delete" method="POST">
+                                        <div class="col-md-12">
+                                            @csrf
+                                            <button class="btn btn-danger" style="color: #fff">
+                                                RETURNED
+                                            </button>
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-12 mt-4">
+                <div class="card mb-4">
+                    <div class="card-header pb-0 p-3">
+                        <h6 class="mb-1">Returned Books</h6>
+                    </div>
+                </div>
+
+                <div class="card-body p-3">
+                    <table class="table align-items-center mb-0">
+                        <thead>
+                        <tr>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name
+                                Of Books
+                            </th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                ID
+                            </th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                Date of Return
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($returnedLoans as $returnedLoan)
+                            <tr>
+                                <td>
+                                    <div class="d-flex px-2 py-1">
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h6 class="mb-0 text-sm">{{$returnedLoan->book->title}}</h6>
+                                            <p class="text-xs text-secondary mb-0">{{$returnedLoan->book->author}}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="text-xs font-weight-bold mb-0">{{$returnedLoan->book->id}}</p>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    <p class="text-xs font-weight-bold mb-0">{{$returnedLoan->deleted_at}}</p>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="fixed-plugin">
-            <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-                <i class="fa fa-cog py-2"> </i>
-            </a>
+    <div class="fixed-plugin">
+        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+            <i class="fa fa-cog py-2"> </i>
+        </a>
 
-            <!--   Core JS Files   -->
-            <script src="{{asset('js/core/popper.min.js')}}"></script>
-            <script src="{{asset('js/core/bootstrap.min.js')}}"></script>
-            <script src="{{asset('js/plugins/perfect-scrollbar.min.js')}}"></script>
-            <script src="{{asset('js/plugins/smooth-scrollbar.min.js')}}"></script>
-            <script>
-                var win = navigator.platform.indexOf('Win') > -1;
-                if (win && document.querySelector('#sidenav-scrollbar')) {
-                    var options = {
-                        damping: '0.5'
-                    }
-                    Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        <!--   Core JS Files   -->
+        <script src="{{asset('js/core/popper.min.js')}}"></script>
+        <script src="{{asset('js/core/bootstrap.min.js')}}"></script>
+        <script src="{{asset('js/plugins/perfect-scrollbar.min.js')}}"></script>
+        <script src="{{asset('js/plugins/smooth-scrollbar.min.js')}}"></script>
+        <script>
+            var win = navigator.platform.indexOf('Win') > -1;
+            if (win && document.querySelector('#sidenav-scrollbar')) {
+                var options = {
+                    damping: '0.5'
                 }
-            </script>
-            <!-- Github buttons -->
-            <script async defer src="https://buttons.github.io/buttons.js"></script>
-            <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-            <script src="{{asset('js/soft-ui-dashboard.min.js?v=1.0.3')}}"></script>
+                Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+            }
+        </script>
+        <!-- Github buttons -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+        <script src="{{asset('js/soft-ui-dashboard.min.js?v=1.0.3')}}"></script>
 </body>
 </html>

@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
         Category::factory(5)->create();
         Subscriber::factory(25)->create();
         Keyword::factory(5)->create();
-        Loan::factory(5)->create();
+        Loan::factory(300)->create();
     }
 }
