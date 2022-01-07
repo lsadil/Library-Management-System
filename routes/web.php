@@ -39,19 +39,23 @@ Route::get('EditBook/{book:slug}', function (Book $book) {
 });
 
 Route::get('AddBook', function () {
-    return view('addBook');
+    return view('addBook', [
+        'keywords' => Keyword::all()
+    ]);
 });
 
 Route::get('DetailBook/{book:slug}', function (Book $book) {
     return view('detailbook', [
         'book' => $book,
-        'loans' => Loan::with('subscriber')->where('book_id', $book->id)->get()
+        'loans' => Loan::with('subscriber')->where('book_id', $book->id)->get(),
+        'keywords' => Keyword::all()->where('book_id', $book->id)
     ]);
 });
 Route::post('EditBook/{book:slug}/update', [BookController::class, 'update']);
 Route::post('EditBook/{book:slug}/delete', [BookController::class, 'destroy']);
 Route::post('AddBook/add', [BookController::class, 'create']);
 Route::get('Books', [BookController::class, 'index']);
+//Route::get('/live-search', [BookController::class, 'liveSearch']);
 
 // Categories
 Route::get('Categories', function () {
@@ -72,7 +76,7 @@ Route::get('editCategory/{category:name}', function (Category $category) {
 Route::get('detailCategory/{category:name}/', function (Category $category) {
     return view('detailcategory', [
         'category' => $category,
-        'books' =>Book::with('category')->where('category_id', $category->id)->get()
+        'books' => Book::with('category')->where('category_id', $category->id)->get()
     ]);
 });
 
@@ -140,6 +144,7 @@ Route::get('Profile/{subscriber:id}/AddLoan', function (Subscriber $subscriber) 
         'subscriber' => $subscriber
     ]);
 });
+
 
 Route::post('AddUser/add', [UserController::class, 'create']);
 Route::post('EditUser/{User:id}/edit', [UserController::class, 'update']);

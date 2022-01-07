@@ -8,15 +8,16 @@ use App\Models\Subscriber;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Password;
 
 class UserController extends Controller
 {
     public function create()
     {
         User::create(request()->validate([
-            'name' => ['required', 'max:255', 'min:3', 'alpha'],
+            'name' => ['required', 'max:255', 'min:3', 'string'],
             'email' => ['email', 'required', Rule::unique('users', 'email')],
-            'password' => ['required', 'min:7', 'max:255', 'alpha_num']
+            'password' => ['required', Password::min(8)->mixedCase()->numbers()->uncompromised()]
         ]));
 //        session()->flash('success', 'Your account has been created.');
         return redirect('Users');
@@ -24,7 +25,6 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-
         $user = User::firstWhere('id', $id);
         $user->name = ($request->filled('name')) ? ($request->input('name')) : $user->name;
         $user->email = ($request->filled('email')) ? ($request->input('email')) : $user->email;

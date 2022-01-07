@@ -4,17 +4,18 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CategoryFactory extends Factory
+class KeywordFactory extends Factory
 {
     /**
      * Define the model's default state.
      *
      * @return array
      */
-    public function definition(): array
+    public function definition()
     {
         return [
-            'name' => $this->faker->randomElement(['Thriller', 'Adventure', 'Romance', 'Fantasy', 'Detective'])
+            'book_id' => $this->faker->numberBetween(1, 100),
+            'keyword' => $this->faker->word(),
         ];
     }
 }

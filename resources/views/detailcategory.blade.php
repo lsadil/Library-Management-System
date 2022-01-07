@@ -184,7 +184,7 @@
                     </div>
                     <span class="nav-link-text ms-1">Users</span>
                 </a>
-            </li>      
+            </li>
         </ul>
     </div>
 </aside>
@@ -333,7 +333,7 @@
         <div class="row">
             <div class="col-3">
                 <div class="card mb-4">
-                    
+
                 </div>
             </div>
             <div class="col-12">
@@ -364,22 +364,23 @@
                                 </thead>
                                 <tbody>
                                 <tbody>
-                                        @foreach ($books as $book)
-                                        <tr class="cliquable" onclick="location.href='{{DetailBook/$book->id}}'" style="cursor:pointer;">
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">{{$book->title}}</h6>
+                                @foreach ($books as $book)
+                                    <tr class="cliquable" onclick="location.href='/DetailBook/{{$book->id}}'"
+                                        style="cursor:pointer;">
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$book->title}}</h6>
 
-                                                    </div>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">{{$book->author}}</h6>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$book->author}}</h6>
 
-                                                    </div>
+                                                </div>
                                                 </div>
                                             </td>
                                             <td class="align-middle text-center text-sm">

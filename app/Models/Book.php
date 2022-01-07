@@ -12,7 +12,6 @@ class Book extends Model
 {
     use HasFactory;
 
-
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
@@ -47,6 +46,9 @@ class Book extends Model
         $query->when($filters['language'] ?? false, fn($query, $search) => $query
             ->where('language', 'like', '%' . $search . '%')
         );
+
+        $query->when($filters['keyword'] ?? false, fn($query, $search) => $query->whereHas('keyword', fn($query) => $query->where('keyword', $search)));
+
 
         $query->when($filters['year'] ?? false, fn($query, $search) => $query
             ->where('year', 'like', '%' . $search . '%')

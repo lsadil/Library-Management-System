@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Keyword extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'keyword',
+        'book_id'
+    ];
 }

@@ -20,7 +20,7 @@ class BookFactory extends Factory
             'author' => $this->faker->name(),
             'category_id' => $this->faker->numberBetween(1, 5),
             'editor' => $this->faker->name(),
-            'summary' => $this->faker->sentence(10, true),
+            'summary' => $this->faker->sentence(20, true),
             'ISBN' => $this->faker->isbn10(),
             'number_of_copies' => $this->faker->numberBetween(1, 20),
             'language' => $this->faker->word(),
