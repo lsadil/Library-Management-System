@@ -24,6 +24,28 @@
     tr.cliquable:hover {
         background-color: #ADD8E6;
     }
+    .accordion {
+        background-color: #9370DB;
+          border-radius: 10px;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align:center;
+  color:#fff;
+  display:block;
+   font-weight: bold;
+font-size:18px;
+  outline: none;
+}
+
+
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: block;
+}
 </style>
 
 <head>
@@ -334,17 +356,11 @@
     <!-- End Navbar -->
     <div class="container-fluid py-4">
         <div class="row">
-            <div class="col-3">
-                <div class="card mb-4">
-                    <input class="favorite styled" onclick="window.location.href='AddBook'" type="button"
-                           value="Add Book">
-                </div>
-            </div>
             <div class="col-12">
                 <div class="card mb-4">
-                    <div class="card-header pb-0">
-                        <h6>Search</h6>
-                    </div>
+                    <button  id="myButton"  onmouseover="mouseOver()"   onmouseout="mouseOut()"  class="accordion"   > Search</button>
+<div class="panel">
+
                     <div class="card-body px-0 pt-0 pb-2">
                         <form method="get" action="#">
                             <div class="col-md-12">
@@ -427,10 +443,35 @@
                         </form>
                     </div>
                 </div>
+                </div>
                 <div class="card mb-4">
+                <div class="card-body px-0 pt-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                <tr>
+                                <th>      
                     <div class="card-header pb-0">
-                        <h6>Books</h6>
+                        <h6>BOOKS</h6>
                     </div>
+                    </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th>
+                    <form class="row g-2">
+                                <form>
+                                    @csrf
+                                    <input  class="btn btn-secondary btn-block "  onclick="window.location.href ='AddBook'" type="button"
+                                           value="ADD BOOK"/>
+                                </form>
+                        
+                        </form>
+                        </th>
+                  </tr>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
                             <table class="table align-items-center mb-0">
@@ -449,7 +490,7 @@
                                         ISBN
                                     </th>
                                     <th class="text-secondary opacity-7"></th>
-                                    <th class="text-secondary opacity-7"></th>
+                                    <th class="text-secondary opacity-7"> </th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -611,6 +652,32 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+<script>
+var tag=document.getElementById("myButton");
+
+function mouseOver() {
+    tag.style.background="#EE82EE";
+};
+function mouseOut() {
+    tag.style.background="#9370DB";
+};
+</script>
 </body>
 
 </html>
