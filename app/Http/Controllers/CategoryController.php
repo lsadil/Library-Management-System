@@ -9,6 +9,8 @@ class CategoryController extends Controller
 {
     public function create(Request $request)
     {
+        request()->validate(['name' => ['required', 'max:255', 'min:3', 'string'],]);
+
         $category = new Category;
         $category->name = $request->input('name');
         $category->save();
@@ -17,6 +19,8 @@ class CategoryController extends Controller
 
     public function update(Request $request, $name)
     {
+        request()->validate(['name' => ['required', 'max:255', 'min:3', 'string'],]);
+
         $category = Category::firstWhere('name', $name);
         $category->name = ($request->filled('name')) ? ($request->input('name')) : ($category->name);
         $category->save();

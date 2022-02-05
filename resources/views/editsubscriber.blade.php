@@ -334,6 +334,9 @@
                                     </label>
                                     <input type="text" name="first_name" class="form-control" id="firstName"
                                            placeholder="{{$subscriber->first_name}}"/>
+                                    @error('first_name')
+                                    <p class="text-danger text-xs mt-2">{{$message}}</p>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <label for="lastName"
@@ -342,6 +345,9 @@
                                     </label>
                                     <input type="text" name="last_name" class="form-control" id="lastName"
                                            placeholder="{{$subscriber->last_name}}"/>
+                                    @error('last_name')
+                                    <p class="text-danger text-xs mt-2">{{$message}}</p>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <label for="date"
@@ -350,6 +356,9 @@
                                     </label>
                                     <input type="date" name="birthday" class="form-control" id="date"
                                            placeholder="{{$subscriber->birthday}}"/>
+                                    @error('birthday')
+                                    <p class="text-danger text-xs mt-2">{{$message}}</p>
+                                    @enderror
                                 </div>
                                 <div class="col-md-12">
                                     <button type="submit" class="btn" style="background-color: green; color: #fff">

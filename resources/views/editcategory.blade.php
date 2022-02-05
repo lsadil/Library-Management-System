@@ -335,8 +335,10 @@
                                        class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
                                     Name Of Category
                                 </label>
-                                <input type="text" name="name" class="form-control" id="nameOfCategory"
-                                       placeholder="XXX"/> <!-- $category->title -->
+                                <input type="text" name="name" class="form-control" id="nameOfCategory"/>
+                                @error('name')
+                                <p class="text-danger text-xs mt-2">{{$message}}</p>
+                                @enderror
                             </div>
                             <div class="col-md-12">
                                 <button type="submit" class="btn" style="background-color: green; color: #fff">

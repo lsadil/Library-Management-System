@@ -25,6 +25,11 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+        request()->validate([
+            'name' => ['nullable ', 'max:255', 'min:3', 'string'],
+            'email' => ['nullable ', 'email', Rule::unique('users', 'email')],
+            'password' => ['nullable ', Password::min(8)->mixedCase()->numbers()->uncompromised()]
+        ]);
         $user = User::firstWhere('id', $id);
         $user->name = ($request->filled('name')) ? ($request->input('name')) : $user->name;
         $user->email = ($request->filled('email')) ? ($request->input('email')) : $user->email;

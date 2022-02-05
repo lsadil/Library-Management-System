@@ -333,6 +333,9 @@
                                         Name Of Category
                                     </label>
                                     <input type="text" name="name" class="form-control" id="nameOfCategory" required/>
+                                    @error('name')
+                                    <p class="text-danger text-xs mt-2">{{$message}}</p>
+                                    @enderror
                                 </div>
                                 <div class="col-md-12">
                                     <button type="submit" class="btn" style="background-color: green; color: #fff">

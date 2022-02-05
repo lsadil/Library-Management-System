@@ -342,6 +342,9 @@
                                 </label>
                                 <input type="text" name="name" class="form-control" id="name"
                                        placeholder="{{$user->name}}"/>
+                                @error('name')
+                                <p class="text-danger text-xs mt-2">{{$message}}</p>
+                                @enderror
                             </div>
                             <div class="col-md-6">
                                 <label for="email"
@@ -350,6 +353,9 @@
                                 </label>
                                 <input type="email" name="email" class="form-control" id="email"
                                        placeholder="{{$user->email}}"/>
+                                @error('email')
+                                <p class="text-danger text-xs mt-2">{{$message}}</p>
+                                @enderror
                             </div>
                             <div class="col-md-6">
                                 <label for="password"
@@ -357,6 +363,9 @@
                                     Password
                                 </label>
                                 <input type="password" name="password" class="form-control" id="password"/>
+                                @error('password')
+                                <p class="text-danger text-xs mt-2">{{$message}}</p>
+                                @enderror
                             </div>
                             <div class="col-md-12">
                                 <button type="submit" class="btn" style="background-color: green; color: #fff">

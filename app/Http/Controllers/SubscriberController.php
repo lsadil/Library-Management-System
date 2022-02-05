@@ -10,6 +10,11 @@ class SubscriberController extends Controller
 {
     public function create(Request $request)
     {
+        request()->validate([
+            'first_name' => ['required', 'max:255', 'min:3', 'string'],
+            'last_name' => ['required', 'max:255', 'min:3', 'string'],
+            'birthday' => ['required', 'date']
+        ]);
         $subscriber = new Subscriber();
         $subscriber->first_name = $request->input('first_name');
         $subscriber->last_name = $request->input('last_name');
@@ -20,6 +25,11 @@ class SubscriberController extends Controller
 
     public function update(Request $request, $id)
     {
+        request()->validate([
+            'first_name' => ['required', 'max:255', 'min:3', 'string'],
+            'last_name' => ['required', 'max:255', 'min:3', 'string'],
+            'birthday' => ['required', 'date']
+        ]);
         $subscriber = Subscriber::firstWhere('id', $id);
         $subscriber->first_name = ($request->filled('first_name')) ? ($request->input('first_name')) : ($subscriber->first_name);
         $subscriber->last_name = ($request->filled('last_name')) ? ($request->input('last_name')) : ($subscriber->last_name);
