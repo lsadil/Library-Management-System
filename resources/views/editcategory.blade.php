@@ -150,6 +150,7 @@
                     <span class="nav-link-text ms-1">Subscribers</span>
                 </a>
             </li>
+            @admin
             <li class="nav-item">
                 <a class="nav-link  " href="/Users">
                     <div
@@ -176,7 +177,8 @@
                     <span class="nav-link-text ms-1">Users</span>
                 </a>
             </li>
-             </ul>
+            @endadmin
+        </ul>
     </div>
 </aside>
 <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
@@ -190,7 +192,7 @@
                     </li>
                     <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:history.go(-1)">Categories</a>
                     </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Edit Category</li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Edit Category</li>
                 </ol>
                 <h6 class="font-weight-bolder mb-0">Edit Category</h6>
             </nav>
@@ -208,13 +210,15 @@
                                 @csrf
                                 <a href="logout" class="nav-link text-body font-weight-bold px-0">
                                     <i class="fa fa-user me-sm-1"></i>
-                                    <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Log Out</button>
+                                    <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Log Out
+                                    </button>
                                 </a>
                             </form>
                         @else
                             <a href="Sign-in" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
-                                <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign in</button>
+                                <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign in
+                                </button>
                             </a>
                         @endauth
                     </li>

@@ -24,28 +24,28 @@
     tr.cliquable:hover {
         background-color: #ADD8E6;
     }
+
     .accordion {
         background-color: #9370DB;
-          border-radius: 10px;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align:center;
-  color:#fff;
-  display:block;
-   font-weight: bold;
-font-size:18px;
-  outline: none;
-}
+        border-radius: 10px;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: center;
+        color: #fff;
+        display: block;
+        font-weight: bold;
+        font-size: 18px;
+        outline: none;
+    }
 
 
-
-.panel {
-  padding: 0 18px;
-  display: none;
-  background-color: white;
-  overflow: block;
-}
+    .panel {
+        padding: 0 18px;
+        display: none;
+        background-color: white;
+        overflow: block;
+    }
 </style>
 
 <head>
@@ -70,6 +70,7 @@ font-size:18px;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+    @livewireStyles
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -186,6 +187,7 @@ font-size:18px;
                     <span class="nav-link-text ms-1">Subscribers</span>
                 </a>
             </li>
+            @admin
             <li class="nav-item">
                 <a class="nav-link  " href="Users">
                     <div
@@ -212,6 +214,7 @@ font-size:18px;
                     <span class="nav-link-text ms-1">Users</span>
                 </a>
             </li>
+            @endadmin
         </ul>
     </div>
 </aside>
@@ -358,188 +361,192 @@ font-size:18px;
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
-                    <button  id="myButton"  onmouseover="mouseOver()"   onmouseout="mouseOut()"  class="accordion"   > Search</button>
-<div class="panel">
-
-                    <div class="card-body px-0 pt-0 pb-2">
-                        <form method="get" action="#">
-                            <div class="col-md-12">
-                                <label for="titleOfBook"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                    Title Of Book
-                                </label>
-                                <input type="text" name="title" class="form-control" id="titleOfBook"
-                                       value="{{request('title')}}"/>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="nameOfAuthor"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                    Name Of Author
-                                </label>
-                                <input type="text" name="author" class="form-control" id="nameOfAuthor"
-                                       value="{{request('author')}}"/>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="ISBN"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                    ISBN
-                                </label>
-                                <input type="number" name="ISBN" class="form-control " id="ISBN"
-                                       value="{{request('ISBN')}}"/>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="Category"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Category</label>
-                                <input class="form-control" name="category" list="datalistOptions" id="Category"
-                                       placeholder="Select Category..." value="{{request('category')}}">
-                                <datalist id="datalistOptions">
-                                    <option value="Polar">
-                                    <option value="Documentary">
-                                    <option value="Etude">
-                                    <option value="Comics">
-                                </datalist>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="language"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Language</label>
-                                <input class="form-control" name="language" list="datalistOptions2" id="language"
-                                       value="{{request('language')}}">
-                                <datalist id="datalistOptions2">
-                                    <option value="English">
-                                    <option value="Arabic">
-                                    <option value="Spanish">
-                                    <option value="German">
-                                </datalist>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="date"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                    Keywords
-                                </label>
-                                <select class="form-select" multiple aria-label="multiple select">
-                                    <option value="aventure">aventure</option>
-                                    <option value="roman">roman</option>
-                                    <option value="suspense">suspense</option>
-                                    <option value="thriller">thriller</option>
-                                    <option value="informatique">informatique</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="date"
-                                       class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
-                                    Year
-                                </label>
-                                <input type="number" name="year" class="form-control " id="date"
-                                       value="{{request('year')}}"/>
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <button type="submit" class="btn" style="background-color: green; color: #fff">
-                                    Search
-                                </button>
-                                <button type="reset" class="btn" style="background-color: orangered; color: #fff">
-                                    Reset
-                                </button>
-                            </div>
-                        </form>
+                    <button id="myButton" onmouseover="mouseOver()" onmouseout="mouseOut()" class="accordion"> Search
+                    </button>
+                    <div class="panel">
+                        <div class="card-body px-0 pt-0 pb-2">
+                            <form method="get" action="#">
+                                <div class="col-md-12">
+                                    <label for="titleOfBook"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                        Title Of Book
+                                    </label>
+                                    <input type="text" name="title" class="form-control" id="titleOfBook"
+                                           value="{{request('title')}}"/>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="nameOfAuthor"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                        Name Of Author
+                                    </label>
+                                    <input type="text" name="author" class="form-control" id="nameOfAuthor"
+                                           value="{{request('author')}}"/>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="ISBN"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                        ISBN
+                                    </label>
+                                    <input type="number" name="ISBN" class="form-control " id="ISBN"
+                                           value="{{request('ISBN')}}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="Category"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Category</label>
+                                    <input class="form-control" name="category" list="datalistOptions" id="Category"
+                                           placeholder="Select Category..." value="{{request('category')}}">
+                                    <datalist id="datalistOptions">
+                                        @foreach($categories as $category)
+                                            <option value="{{$category->name}}"></option>
+                                        @endforeach
+                                    </datalist>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="language"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">Language</label>
+                                    <input class="form-control" name="language" list="datalistOptions2" id="language"
+                                           value="{{request('language')}}">
+                                    <datalist id="datalistOptions2">
+                                        <option value="English">
+                                        <option value="Arabic">
+                                        <option value="Spanish">
+                                        <option value="German">
+                                    </datalist>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="date"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                        Keywords
+                                    </label>
+                                    <select name="keyword" class="form-select col-md-6" multiple
+                                            aria-label="multiple select">
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="date"
+                                           class="form-label text-center text-uppercase  text-xxs font-weight-bolder">
+                                        Year
+                                    </label>
+                                    <input type="number" name="year" class="form-control " id="date"
+                                           value="{{request('year')}}"/>
+                                </div>
+                                <div class="col-md-12 mt-3">
+                                    <button type="submit" class="btn" style="background-color: green; color: #fff">
+                                        Search
+                                    </button>
+                                    <button type="reset" class="btn" style="background-color: orangered; color: #fff">
+                                        Reset
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
                 </div>
                 <div class="card mb-4">
-                <div class="card-body px-0 pt-0 pb-2">
-                        <div class="table-responsive p-0">
-                            <table class="table align-items-center mb-0">
-                                <thead>
-                                <tr>
-                                <th>      
-                    <div class="card-header pb-0">
-                        <h6>BOOKS</h6>
-                    </div>
-                    </th>
-                    <th> </th>
-                    <th> </th>
-                    <th> </th>
-                    <th> </th>
-                    <th> </th>
-                    <th> </th>
-                    <th>
-                    <form class="row g-2">
-                                <form>
-                                    @csrf
-                                    <input  class="btn btn-secondary btn-block "  onclick="window.location.href ='AddBook'" type="button"
-                                           value="ADD BOOK"/>
-                                </form>
-                        
-                        </form>
-                        </th>
-                  </tr>
                     <div class="card-body px-0 pt-0 pb-2">
+
                         <div class="table-responsive p-0">
                             <table class="table align-items-center mb-0">
                                 <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name
-                                        Of Books
+                                    <th>
+                                        <div class="card-header pb-0">
+                                            <h6>BOOKS</h6>
+                                        </div>
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Number Of Copies
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Category
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        ISBN
-                                    </th>
-                                    <th class="text-secondary opacity-7"></th>
-                                    <th class="text-secondary opacity-7"> </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach ($books as $book)
-                                    <tr class="cliquable" onclick="location.href='DetailBook/{{$book->slug}}'"
-                                        style="cursor:pointer;">
-                                        <td>
-                                            <div class="d-flex px-2 py-1">
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm">{{$book->title}}</h6>
-                                                    <p class="text-xs text-secondary mb-0">{{$book->author}}</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p class="text-xs font-weight-bold mb-0">{{$book->number_of_copies}}</p>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <p class="text-xs font-weight-bold mb-0">{{$book->category->name}}</p>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">{{$book->ISBN}}</span>
-                                        </td>
-                                        <td class="align-middle">
-                                            <a href="EditBook/{{$book->slug}}"
-                                               class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                                               data-original-title="Edit user">
-                                                Edit
-                                            </a>
-                                        </td>
-                                        <td class="align-middle">
-                                            <form class="row g-3" action="EditBook/{{$book->slug}}/delete"
-                                                  method="POST">
-                                                <div class="col-md-12">
-                                                    @csrf
-                                                    <button type="" class="btn btn-danger" style="color: #fff">
-                                                        Delete
-                                                    </button>
-                                                </div>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>
+                                        <form class="row g-2">
+                                            <form>
+                                                @csrf
+                                                <input class="btn btn-secondary btn-block "
+                                                       onclick="window.location.href ='AddBook'" type="button"
+                                                       value="ADD BOOK"/>
                                             </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
+                                        </form>
+                                    </th>
+                                </tr>
+                                <div class="table-responsive p-0">
+                                    <table class="table align-items-center mb-0">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Name
+                                                Of Books
+                                            </th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                Number Of Copies
+                                            </th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Category
+                                            </th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                ISBN
+                                            </th>
+                                            <th class="text-secondary opacity-7"></th>
+                                            <th class="text-secondary opacity-7"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach ($books as $book)
+                                            <tr class="cliquable"
+                                                onclick="location.href='DetailBook/{{$book->slug}}'"
+                                                style="cursor:pointer;">
+                                                <td>
+                                                    <div class="d-flex px-2 py-1">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm">{{$book->title}}</h6>
+                                                            <p class="text-xs text-secondary mb-0">{{$book->author}}</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p class="text-xs font-weight-bold mb-0">{{$book->number_of_copies}}</p>
+                                                </td>
+                                                <td class="align-middle text-center text-sm">
+                                                    <p class="text-xs font-weight-bold mb-0">{{$book->category->name}}</p>
+                                                </td>
+                                                <td class="align-middle text-center">
+                                                        <span
+                                                            class="text-secondary text-xs font-weight-bold">{{$book->ISBN}}</span>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a href="EditBook/{{$book->slug}}"
+                                                       class="text-secondary font-weight-bold text-xs"
+                                                       data-toggle="tooltip"
+                                                       data-original-title="Edit user">
+                                                        Edit
+                                                    </a>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <form class="row g-3" action="EditBook/{{$book->slug}}/delete"
+                                                          method="POST">
+                                                        <div class="col-md-12">
+                                                            @csrf
+                                                            <button type="" class="btn btn-danger"
+                                                                    style="color: #fff">
+                                                                Delete
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                    <div class="d-flex justify-content-center">
+                                        {!! $books->onEachSide(1)->links() !!}
+                                    </div>
+                                </div>
+                                </thead>
                             </table>
-                            <div class="d-flex justify-content-center">
-                                {!! $books->links() !!}
-                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -653,31 +660,34 @@ font-size:18px;
 <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
 <script>
-var acc = document.getElementsByClassName("accordion");
-var i;
+    var acc = document.getElementsByClassName("accordion");
+    var i;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
     }
-  });
-}
 </script>
 <script>
-var tag=document.getElementById("myButton");
+    var tag = document.getElementById("myButton");
 
-function mouseOver() {
-    tag.style.background="#EE82EE";
-};
-function mouseOut() {
-    tag.style.background="#9370DB";
-};
+    function mouseOver() {
+        tag.style.background = "#EE82EE";
+    };
+
+    function mouseOut() {
+        tag.style.background = "#9370DB";
+    };
 </script>
+@livewireScripts
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>

@@ -49,7 +49,7 @@ Route::get('DetailBook/{book:slug}', function (Book $book) {
     return view('detailbook', [
         'book' => $book,
         'loans' => Loan::with('subscriber')->where('book_id', $book->id)->get(),
-        'keywords' => Keyword::all()->where('book_id', $book->id)
+        'keywords' => Keyword::where('book_id', $book->id)->get()
     ]);
 });
 Route::post('EditBook/{book:slug}/update', [BookController::class, 'update']);
@@ -98,7 +98,7 @@ Route::get('Keywords', function () {
 
 Route::get('Subscribers', function () {
     return view('subscribers', [
-        'subscribers' => Subscriber::all()
+        'subscribers' => Subscriber::paginate(10)
     ]);
 });
 
@@ -127,20 +127,28 @@ Route::post('Profile/{loan:id}/delete', [SubscriberController::class, 'destroyLo
 
 
 //Users
-Route::get('Users', function () {
-    return view('users', [
-        'users' => User::all()
-    ]);
-});
+Route::middleware('can:admin')->group(function () {
 
-Route::get('AddUsers', function () {
-    return view('adduser');
-});
+    Route::get('Users', function () {
+        return view('users', [
+            'users' => User::all()
+        ]);
+    });
 
-Route::get('EditUser/{user:id}', function (User $user) {
-    return view('edituser', [
-        'user' => $user
-    ]);
+    Route::get('AddUsers', function () {
+        return view('adduser');
+    });
+
+    Route::get('EditUser/{user:id}', function (User $user) {
+        return view('edituser', [
+            'user' => $user
+        ]);
+    });
+
+    Route::post('AddUser/add', [UserController::class, 'create']);
+    Route::post('EditUser/{User:id}/edit', [UserController::class, 'update']);
+    Route::post('EditUser/{user:id}/delete', [UserController::class, 'destroy']);
+
 });
 
 Route::get('Profile/{subscriber:id}/AddLoan', function (Subscriber $subscriber) {
@@ -148,12 +156,8 @@ Route::get('Profile/{subscriber:id}/AddLoan', function (Subscriber $subscriber) 
         'subscriber' => $subscriber
     ]);
 });
-
-
-Route::post('AddUser/add', [UserController::class, 'create']);
-Route::post('EditUser/{User:id}/edit', [UserController::class, 'update']);
-Route::post('EditUser/{user:id}/delete', [UserController::class, 'destroy']);
 Route::post('Profile/{subscriber:id}/AddLoan/add', [UserController::class, 'addLoan']);
+
 
 //sign in and log out
 

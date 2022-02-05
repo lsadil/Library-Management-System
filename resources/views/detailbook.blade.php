@@ -151,6 +151,7 @@
                     <span class="nav-link-text ms-1">Subscribers</span>
                 </a>
             </li>
+            @admin
             <li class="nav-item">
                 <a class="nav-link  " href="/Users">
                     <div
@@ -177,6 +178,7 @@
                     <span class="nav-link-text ms-1">Users</span>
                 </a>
             </li>
+            @endadmin
         </ul>
     </div>
 </aside>
@@ -341,7 +343,11 @@
                                 <h6><b>Language</b> : {{$book->language}}</h6>
                                 <h6><b>Year</b> : {{$book->year}}</h6>
                                 <h6><b>Category</b> : {{$book->category->name}} </h6>
-                                <h6><b>Keyword</b> : Thriller , True story , American</h6>
+                                <h6><b>Keyword</b> :
+                                    @foreach($keywords as $keyword)
+                                        {{$keyword->keyword}}&nbsp;
+                                    @endforeach
+                                </h6>
                             </div>
                             <div class="col-12">
                                 <div class="card mb-4">
@@ -371,7 +377,8 @@
                                                 </thead>
                                                 <tbody>
                                                 @foreach($loans as $loan)
-                                                    <tr class="survol" onclick="location.href='profile.html'"
+                                                    <tr class="survol"
+                                                        onclick="location.href='/Profile/{{$loan->subscriber->id}}'"
                                                         style="cursor:pointer;">
                                                         <td>
                                                             <div class="d-flex px-2 py-1">
@@ -677,6 +684,7 @@
             </div>
         </footer> -->
         </div>
+    </div>
 </main>
 <div class="fixed-plugin">
     <!-- <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">

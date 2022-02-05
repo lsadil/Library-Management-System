@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use App\Models\Keyword;
 use Database\Factories\BookFactory;
 use Illuminate\Http\Request;
@@ -11,11 +12,13 @@ class BookController extends Controller
 {
     public function index()
     {
+//        ddd(request()->all());
         return view('books', [
             'books' => Book::latest()->filter(
-                request(['title', 'author', 'ISBN', 'category', 'keyword', 'language', 'year']))
+                request(['title', 'author', 'ISBN', 'category', 'keyword', 'language', 'year']))->with('category')
                 ->paginate(10)->withQueryString(),
-            'keywords' => Keyword::all()
+            'keywords' => Keyword::all(),
+            'categories' => Category::all()
         ]);
     }
 

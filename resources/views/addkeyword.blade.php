@@ -154,6 +154,7 @@
                     <span class="nav-link-text ms-1">Subscribers</span>
                 </a>
             </li>
+            @admin
             <li class="nav-item">
                 <a class="nav-link  " href="/users">
                     <div
@@ -181,6 +182,7 @@
                     <span class="nav-link-text ms-1">Users</span>
                 </a>
             </li>
+            @endadmin
         </ul>
     </div>
 </aside>

@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Book;
+use App\Models\Keyword;
 use App\Models\Language;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,10 +25,17 @@ class BookFactory extends Factory
             'summary' => $this->faker->sentence(20, true),
             'ISBN' => $this->faker->isbn10(),
             'number_of_copies' => $this->faker->numberBetween(1, 20),
-            'language' => $this->faker->word(),
+            'language' => $this->faker->unique->randomElement(['English', 'French', 'Arabic', 'Japanese', 'Spanish']),
             'year' => $this->faker->year(),
             'image_url' => $this->faker->imageUrl(),
             'added_in' => $this->faker->dateTimeBetween('-1 year', 'now')
         ];
+    }
+
+    public function configure()
+    {
+        return $this->afterCreating(function (Book $book) {
+            Keyword::factory(2)->create(['book_id' => $book->id]);
+        });
     }
 }

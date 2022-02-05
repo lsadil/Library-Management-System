@@ -14,7 +14,6 @@ class KeywordFactory extends Factory
     public function definition()
     {
         return [
-            'book_id' => $this->faker->numberBetween(1, 100),
             'keyword' => $this->faker->word(),
         ];
     }

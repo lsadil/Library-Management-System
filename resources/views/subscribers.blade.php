@@ -16,8 +16,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <style type="text/css">
-	table {border-spacing:0px 10px;}
-	tr.survol:hover{background-color:#ADD8E6;}
+    table {
+        border-spacing: 0px 10px;
+    }
+
+    tr.survol:hover {
+        background-color: #ADD8E6;
+    }
 </style>
 <head>
     <meta charset="utf-8"/>
@@ -154,6 +159,7 @@
                     <span class="nav-link-text ms-1">Subscribers</span>
                 </a>
             </li>
+            @admin
             <li class="nav-item">
                 <a class="nav-link  " href="Users">
                     <div
@@ -180,6 +186,7 @@
                     <span class="nav-link-text ms-1">Users</span>
                 </a>
             </li>
+            @endadmin
         </ul>
     </div>
 </aside>
@@ -210,13 +217,15 @@
                                 @csrf
                                 <a href="logout" class="nav-link text-body font-weight-bold px-0">
                                     <i class="fa fa-user me-sm-1"></i>
-                                    <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Log Out</button>
+                                    <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Log Out
+                                    </button>
                                 </a>
                             </form>
                         @else
                             <a href="Sign-in" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
-                                <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign in</button>
+                                <button type="submit" class="btn btn-secondary" class="d-sm-inline d-none">Sign in
+                                </button>
                             </a>
                         @endauth
                     </li>
@@ -396,6 +405,9 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                            <div class="d-flex justify-content-center">
+                                {!! $subscribers->onEachSide(1)->links() !!}
+                            </div>
                         </div>
                     </div>
                 </div>
