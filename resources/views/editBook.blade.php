@@ -389,10 +389,11 @@
                                 <input class="form-control" name="category" list="datalistOptions2" id="Category"
                                        placeholder="{{$book->category->name}}">
                                 <datalist id="datalistOptions2">
-                                    <option value="Polar">
-                                    <option value="Documentary">
-                                    <option value="Studies">
-                                    <option value="Comics">
+                                    <datalist id="datalistOptions">
+                                        @foreach($categories as $category)
+                                            <option value="{{$category->name}}"
+                                        @endforeach
+                                    </datalist>
                                 </datalist>
                             </div>
                             <div class="col-md-4">

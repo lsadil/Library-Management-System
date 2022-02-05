@@ -364,10 +364,9 @@
                                 <p class="text-danger text-xs mt-2">{{$message}}</p>
                                 @enderror
                                 <datalist id="datalistOptions">
-                                    <option value="Polar">
-                                    <option value="Documentary">
-                                    <option value="Etude">
-                                    <option value="Comics">
+                                    @foreach($categories as $category)
+                                        <option value="{{$category->name}}"
+                                    @endforeach
                                 </datalist>
                             </div>
                             <div class="col-md-4">
@@ -437,7 +436,7 @@
                                     Summary
                                 </label>
                                 <textarea class="form-control" name="summary" id="descriptionOfBook"
-                                          rows="10" value="{{old('summary')}}"></textarea>
+                                          rows="10" value="{{old('summary')}}" required></textarea>
                                 @error('summary')
                                 <p class="text-danger text-xs mt-2">{{$message}}</p>
                                 @enderror
@@ -448,11 +447,6 @@
                                     Keywords
                                 </label>
                                 <select name="keyword[]" class="form-select" multiple aria-label="multiple select">
-                                    <option value="aventure">aventure</option>
-                                    <option value="roman">roman</option>
-                                    <option value="suspense">suspense</option>
-                                    <option value="thriller">thriller</option>
-                                    <option value="informatique">informatique</option>
                                 </select>
                                 @error('keyword')
                                 <p class="text-danger text-xs mt-2">{{$message}}</p>

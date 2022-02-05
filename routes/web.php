@@ -56,13 +56,15 @@ Route::middleware('auth')->group(function () {
 
     Route::get('EditBook/{book:slug}', function (Book $book) {
         return view('editBook', [
-            'book' => $book
+            'book' => $book,
+            'categories' => Category::all()
         ]);
     });
 
     Route::get('AddBook', function () {
         return view('addBook', [
-            'keywords' => Keyword::all()
+            'keywords' => Keyword::all(),
+            'categories' => Category::all()
         ]);
     });
 
