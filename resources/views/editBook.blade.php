@@ -463,7 +463,8 @@
                                 <label for="image" class="form-label">
                                     Book Picture
                                 </label>
-                                <input type="file" name="photo" class="form-control" id="image"/>
+                                <input type="file" name="photo" class="form-control" id="image"
+                                       accept="image/png, image/jpeg"/>
                             </div>
                             <div class="col-md-12">
                                 <button type="submit" class="btn" style="background-color: green; color: #fff">

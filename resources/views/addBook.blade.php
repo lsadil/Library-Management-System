@@ -457,7 +457,7 @@
                                     Book Picture
                                 </label>
                                 <input type="file" value="{{old('ISBN')}}" name="photo" class="form-control"
-                                       id="image"/>
+                                       id="image" accept="image/png, image/jpeg"/>
                             </div>
                             <div class="col-md-12">
                                 <button type="submit" class="btn" style="background-color: green; color: #fff">
