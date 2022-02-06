@@ -28,7 +28,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}">
-    <link rel="icon" type="image/png" href="{{ asset('img/favicon.png')}}">
+    <link rel="icon" type="image/png" href="{{ asset('img/logos/logoLibrary.png')}}">
     <title>
         Library
     </title>
@@ -52,7 +52,7 @@
            aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html"
            target="_blank">
-            <img src="{{ asset('img/logo-ct.png')}}" class="navbar-brand-img h-100" alt="main_logo">
+            <img src="{{ asset('img/logos/logoLibrary.png')}}" class="navbar-brand-img h-100" alt="main_logo">
             <span class="ms-1 font-weight-bold">Library</span>
         </a>
     </div>
@@ -204,10 +204,7 @@
             </nav>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                    <div class="input-group">
-                        <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" placeholder="Type here...">
-                    </div>
+                   
                 </div>
                 <ul class="navbar-nav  justify-content-end">
                     <li class="nav-item d-flex align-items-center">
